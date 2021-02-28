@@ -1,0 +1,50 @@
+:root {
+
+    /* СИСТЕМНЫЕ ЦВЕТА */
+
+    --white:                #ffffff;                /* БЕЛЫЙ */
+    --black:                #000000;                /* ЧЕРНЫЙ */
+    --blur:                 rgba(255, 255, 255, .3);/* БЛЮР */
+    --cardblur:             rgba(255, 255, 255, .3);
+    --newsblur:             rgba(255, 255, 255, .15);
+    --backcol:              #f0f0f0;                /*  ФОН */
+    --descol:               #797979;                /* ОПИСАНИЕ */
+    --datcol:               #9f9f9f;                /* ДАТЫ */
+    --lincol:               #d8d8d8;                /* ЛИНИИ */
+    --cardcol:              #ffffff;
+    --artcol:               #000000;
+
+    /* СИСТЕМНЫЕ ШРИФТЫ */
+
+    --mainfont:             'Gilroy', sans-serif;
+        /* ТОЛЩИНА */
+        --Thin:             100;
+        --UltraLight:       200;
+        --Light:            300;
+        --Regular:          normal;
+        --Medium:           500;
+        --SemiBold:         600;
+        --Bold:             bold;
+        --ExtraBold:        800;
+        --Black:            900;
+        --Heavy:            1000;
+
+    /* СИСТЕМНЫЕ ТЕНИ */
+
+    --cardsh:               0 3 6 rgba(0, 0, 0, .15);
+    
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --white:            #000000;
+        --black:            #ffffff;
+        --blur:             rgba(56, 56, 56, .15);
+        --cardblur:         rgba(43, 43, 43, .15);
+        --newsblur:         rgba(0, 0, 0, .15);
+        --backcol:          #181818;
+        --cardcol:          #2b2b2b;
+        --lincol:           #202020;
+        --artcol:           #d8d8d8;
+    }
+}

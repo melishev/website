@@ -1,0 +1,55 @@
+@media screen and (min-width: 1441px) {
+    .miniCard {
+        .card:nth-child(2) {
+            width: calc(32% - 1.25vw);
+            a {
+                flex-wrap: wrap;
+                height: 100%;
+                .card_image {
+                    width: 100%;
+                    mask-position: top left, top right;
+                    border-radius: 10px 10px 0 0;
+                }
+                .card_info {
+                    width: 100%;
+                    border-radius: 0 0 10px 10px;
+                    .card_info_text{
+                        padding: 15px 2.5vw;
+                        .card_info_text_title {
+                            font-size: 22px;
+                            margin: 10px 0 0 0;
+                        }
+                        .card_info_text_description_block {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .card:nth-child(2):hover {
+            .card_info {
+                transform: translateY(-40px);
+                transition: transform 1s;
+            }
+            .card_info_text{
+                transform: translateY(+20px);
+                transition: transform 1s;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1680px) {
+    .minicard {
+        .card:nth-child(2) {
+            a {
+                .card_info {
+                    .card_info_text{
+                        .card_info_text_title {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

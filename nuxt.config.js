@@ -44,15 +44,15 @@ module.exports = {
 
 	// Global CSS (https://go.nuxtjs.dev/config-css)
 	css: [
-        // '~assets/styles/var.css',
-        // '~assets/styles/global.css'
+        '~assets/styles/var.css',
+        '~assets/styles/global.css'
     ],
 
 	// Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
 	plugins: [
-        // '~plugins/vue-lazy-load',
-        // '~plugins/jsonld',
-        // '~plugins/moment'
+        '~plugins/vue-lazy-load',
+        '~plugins/jsonld',
+        '~plugins/moment'
     ],
 
 	// Auto import components (https://go.nuxtjs.dev/config-components)
@@ -80,12 +80,95 @@ module.exports = {
 	// Axios module configuration (https://go.nuxtjs.dev/config-axios)
 	axios: {},
 
+	sitemap: {
+        sitemaps: [
+            {
+                path: 'sitemap.xml',
+                hostname: 'https://melishev.ru',
+                exclude: [
+                    '/ar',
+                    '/web'
+                ],
+                defaults: {
+                    changefreq: 'weekly',
+                    priority: 0.5,
+                    lastmod: new Date()
+                }
+            },
+            {
+                path: '/projects.xml',
+                hostname: 'https://melishev.ru',
+                exclude: [
+                    '/',
+                    '/projects',
+                    '/news',
+                    '/contacts',
+                    '/web',
+                    '/ar'
+                ],
+                routes: async () => {
+                    const { data } = await axios.get('https://melishev.ru/api/projects')
+                    return data.data.map((project) => `/projects/${project.alias}`)
+                }
+            },
+            {
+                path: '/news.xml',
+                hostname: 'https://melishev.ru',
+                exclude: [
+                    '/',
+                    '/projects',
+                    '/news',
+                    '/contacts',
+                    '/web',
+                    '/ar'
+                ],
+                routes: async () => {
+                    const { data } = await axios.get('https://melishev.ru/api/news')
+                    return data.data.map((article) => `/news/${article.alias}`)
+                }
+            }
+        ]
+    },
+
+    // Robots module configuration (https://www.npmjs.com/package/@nuxtjs/robots)
+    robots: {
+        UserAgent: '*',
+        Allow: '*',
+        Disallow: ['/api'],
+        Sitemap: 'https://melishev.ru/sitemap.xml',
+        Host: 'https://melishev.ru'
+    },
+
 	// Build Configuration (https://go.nuxtjs.dev/config-build)
 	build: {
 		splitChunks: {
             layouts: true,
             pages: true,
             commons: true
+        },
+		postcss: {
+            plugins: {
+                ...(!isDev && {
+                    cssnano: {
+                        preset: ['advanced', {
+                            autoprefixer: false,
+                            cssDeclarationSorter: false,
+                            zindex: false,
+                            discardComments: {
+                                removeAll: true
+                            },
+                            discardUnused: false
+                        }]
+                    }
+                })
+            },
+            ...(!isDev && {
+                preset: {
+                    browsers: 'cover 99.5%',
+                    autoprefixer: true
+                }
+            }),
+            order: 'cssnanoLast'
         },
 		plugins: [
             new MomentLocalesPlugin({

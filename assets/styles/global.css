@@ -1,0 +1,31 @@
+@import url('@/assets/fonts/Gilroy/Gilroy.css');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--mainfont);
+    background-color: var(--backcol);
+}
+a {
+    color: var(--black);
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+video:focus {
+    outline: none;
+}
+header {
+    background-color: var(--blur);
+    height: 50px;
+}
+footer {
+    background-color: var(--blur);
+}
+.navigation_overflow {
+    overflow: hidden;
+}

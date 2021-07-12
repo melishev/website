@@ -1,0 +1,41 @@
+// @import './vars/fontSize';
+// @import 'assets/scss/_mixins';
+
+@import 'public/fonts/Gilroy/stylesheet.css';
+
+html, body {
+    // font-size: $baseSize1 + px;
+    font-family: 'Gilroy', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// @media screen and (max-width: $breakPoint3 + px) {
+//     html, body {
+//         font-size: $baseSize2 + px;
+//     }
+// }
+
+// @media screen and (max-width: $breakPoint4 + px) {
+//     html, body {
+//         font-size: $baseSize3 + px;
+//     }
+// }
+
+// @media screen and (max-width: $breakPoint5 + px) {
+//     html, body {
+//         font-size: $baseSize4 + px;
+//     }
+// }
+
+// @media screen and (max-width: $breakPoint6 + px) {
+//     html, body {
+//         font-size: $baseSize5 + px;
+//     }
+// }
+
+// @media screen and (max-width: $breakPoint7 + px) {
+//     html, body {
+//         font-size: $baseSize6 + px;
+//     }
+// }

@@ -1,0 +1,23 @@
+@import 'styles/imports';
+
+.Home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1 {
+        @include text(rem(32), 400, unset, unset, black);
+        margin-bottom: rem(6);
+    }
+    input {
+        @include text(rem(14), 300, unset, unset, black);
+        outline: unset;
+        padding: rem(6) vw(21);
+    }
+    button {
+        @include text(rem(14), 300, unset, unset, black);
+        outline: unset;
+        padding: rem(6) vw(21);
+    }
+}

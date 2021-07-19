@@ -1,0 +1,21 @@
+@import 'styles/imports';
+
+.Footer {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: saturate(180%) blur(5px);
+    // border-top: 1px solid rgba(0, 0, 0, 0.4);
+    padding: 0 vw(42);
+    position: fixed;
+    bottom: 0;
+    a {
+        @include text(rem(14), 600, unset, unset, black);
+        text-transform: uppercase;
+    }
+    p {
+        @include text(rem(14), 400, unset, unset, black)
+    }
+}

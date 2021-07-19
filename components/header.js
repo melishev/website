@@ -1,24 +1,70 @@
-import styles from 'styles/modules/header.module.scss'
+import styles from 'styles/components/header.module.scss'
 
 import Link from 'next/link'
-
-import { ReactSVG } from 'react-svg'
+import { useEffect, useState } from 'react'
 
 const Header = () => {
+
+  const [scroll, setScroll] = useState(0)
+  const listenScrollEvent = (event) => {
+    if (window.scrollY < 1) {
+      return setScroll(0)
+    } else if (window.scrollY > 1) {
+      return setScroll(1)
+    } 
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', listenScrollEvent);
+    return () =>
+      window.removeEventListener('scroll', listenScrollEvent);
+  }, []);
+
+  const navigation = [
+    {
+      name: 'Projects',
+      slug: 'projects',
+    },
+    {
+      name: 'News',
+      slug: 'news',
+    },
+    {
+      name: 'Products',
+      slug: 'products',
+    },
+    {
+      name: 'Contacts',
+      slug: 'contacts',
+    }
+  ]
+  const controls = [
+    {
+      icon: '􀊫',
+      slug: 'search',
+    },
+    {
+      icon: '􀉩',
+      slug: 'login',
+    }
+  ]
+
   return (
-    <header className={styles.Header}>
-      <p>Melishev</p>
-      <ReactSVG src="public/svg/logo.svg" />
+    <header className={styles.Header} style={scroll ? {background: `rgba(0, 0, 0, .8)`} : {}}>
+      <div className={styles.Header_logo}>
+        <Link href="/"><a style={scroll ? {color: 'white'} : {}}>Melishev ™ <span>| Cheel</span></a></Link>
+      </div>
       <nav>
         <ul>
-          <li><Link href="#">Projects</Link></li>
-          <li><Link href="#">News</Link></li>
-          <li><Link href="#">Products</Link></li>
-          <li><Link href="#">Contacts</Link></li>
+          {navigation.map((item) => (
+            <li key={item.slug}><Link href={item.slug}><a style={scroll ? {color: 'white'} : {}}>{item.name}</a></Link></li>
+          ))}
         </ul>
       </nav>
-      <div>
-        <button>􀉩</button>
+      <div className={styles.Header_controls}>
+        {controls.map((item) => (
+          <button key={item.slug} style={scroll ? {color: 'white'} : {}}>{item.icon}</button>
+        ))}
       </div>
     </header>
   )

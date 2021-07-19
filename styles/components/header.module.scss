@@ -1,22 +1,36 @@
 @import 'styles/imports';
 
 .Header {
+    width: 100%;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     backdrop-filter: saturate(180%) blur(5px);
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    border-bottom: 1px solid rgba(255, 255, 255, .4);
     padding: 0 vw(42);
-    p {
-        max-width: 25%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    transition: background 1s;
+    &_logo {
+        max-width: 20%;
         flex-grow: 1;
         display: flex;
         justify-content: flex-start;
-        @include text(rem(20), 300, unset, unset, black)
+        a {
+            @include text(rem(18), 600, unset, unset, black);
+            text-transform: uppercase;
+            transition: color 1s;
+            span {
+                @include text(rem(16), 400, unset, unset, black);
+                text-transform: capitalize;
+                color: inherit;
+            }
+        }
     }
     nav {
-        max-width: 50%;
+        max-width: 60%;
         flex-grow: 2;
         display: flex;
         justify-content: center;
@@ -26,20 +40,23 @@
                 margin: 0 vw(21);
                 a {
                     @include text(rem(18), 300, unset, unset, black);
+                    transition: color 1s;
                 }
             }
         }
     }
-    div {
-        min-width: 25%;
+    &_controls {
+        max-width: 20%;
         flex-grow: 1;
         display: flex;
         justify-content: flex-end;
         button {
             @include text(rem(18), 300, unset, unset, black);
-            font-family: 'SF Compact';
+            font-family: 'SF Pro';
+            transition: color 1s;
             border: unset;
             background: unset;
+            margin-left: vw(21);
             cursor: pointer;
         }
     }

@@ -1,10 +1,46 @@
 @import 'styles/imports';
 
 .Header {
-    // display: flex;
-    // align-items: center;
-    // justify-content: space-between;
-    // backdrop-filter: saturate(180%) blur(5px);
-    // padding: ;
-    // border-bottom: ;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: saturate(180%) blur(5px);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    padding: 0 vw(42);
+    p {
+        max-width: 25%;
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-start;
+        @include text(rem(20), 300, unset, unset, black)
+    }
+    nav {
+        max-width: 50%;
+        flex-grow: 2;
+        display: flex;
+        justify-content: center;
+        ul {
+            display: flex;
+            li {
+                margin: 0 vw(21);
+                a {
+                    @include text(rem(18), 300, unset, unset, black);
+                }
+            }
+        }
+    }
+    div {
+        min-width: 25%;
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+        button {
+            @include text(rem(18), 300, unset, unset, black);
+            font-family: 'SF Compact';
+            border: unset;
+            background: unset;
+            cursor: pointer;
+        }
+    }
 }

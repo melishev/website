@@ -1,0 +1,10 @@
+@mixin text($size, $weight, $height, $spacing, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $height;
+    letter-spacing: $spacing;
+    color: $color;
+    // @media screen and (max-width: $fs + px) {
+    //     font-size: $size + px;
+    // }
+}

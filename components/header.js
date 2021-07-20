@@ -1,24 +1,24 @@
 import styles from 'styles/components/header.module.scss'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 
 const Header = () => {
 
-  const [scroll, setScroll] = useState(0)
-  const listenScrollEvent = (event) => {
-    if (window.scrollY < 1) {
-      return setScroll(0)
-    } else if (window.scrollY > 1) {
-      return setScroll(1)
-    } 
-  }
+  // const [scroll, setScroll] = useState(0)
+  // const listenScrollEvent = (event) => {
+  //   if (window.scrollY < 1) {
+  //     return setScroll(0)
+  //   } else if (window.scrollY > 1) {
+  //     return setScroll(1)
+  //   } 
+  // }
 
-  useEffect(() => {
-    window.addEventListener('scroll', listenScrollEvent);
-    return () =>
-      window.removeEventListener('scroll', listenScrollEvent);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener('scroll', listenScrollEvent);
+  //   return () =>
+  //     window.removeEventListener('scroll', listenScrollEvent);
+  // }, []);
 
   const navigation = [
     {
@@ -40,11 +40,11 @@ const Header = () => {
   ]
   const controls = [
     {
-      icon: '􀊫',
+      icon: 'F',
       slug: 'search',
     },
     {
-      icon: '􀉩',
+      icon: 'A',
       slug: 'login',
     }
   ]
@@ -52,7 +52,11 @@ const Header = () => {
   return (
     <header className={styles.Header} style={scroll ? {background: `rgba(0, 0, 0, .8)`} : {}}>
       <div className={styles.Header_logo}>
-        <Link href="/"><a style={scroll ? {color: 'white'} : {}}>Melishev ™ <span>| Cheel</span></a></Link>
+        <Link href="/">
+          <a style={scroll ? {color: 'white'} : {}}>Melishev ™
+            {/* <span> | Cheel</span> */}
+          </a>
+        </Link>
       </div>
       <nav>
         <ul>

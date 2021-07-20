@@ -52,7 +52,7 @@
         justify-content: flex-end;
         button {
             @include text(rem(18), 300, unset, unset, black);
-            font-family: 'SF Pro';
+            font-family: 'Icons';
             transition: color 1s;
             border: unset;
             background: unset;

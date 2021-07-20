@@ -1,15 +1,15 @@
 import 'styles/global.scss'
 
-import 'swiper/swiper.scss';
-
 import Header from 'components/header'
 import Footer from 'components/footer'
+import ModalNavigation from 'components/modalNavigation'
 
 function Application({ Component, pageProps }) {
   return (
     <>
       <Header />
       <Component {...pageProps} />
+      <ModalNavigation />
       <Footer />
     </>
   )

@@ -2,39 +2,17 @@ import styles from 'styles/components/header.module.scss'
 
 import Link from 'next/link'
 
-import { Menu } from '@geist-ui/react-icons'
+import { Menu, User, Search } from '@geist-ui/react-icons'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { changeNavigation, selectNavigation } from 'redux/state/modals'
 
 
 const Header = () => {
 
-  const navigation = [
-    {
-      name: 'Projects',
-      slug: 'projects',
-    },
-    {
-      name: 'News',
-      slug: 'news',
-    },
-    {
-      name: 'Products',
-      slug: 'products',
-    },
-    {
-      name: 'Contacts',
-      slug: 'contacts',
-    }
-  ]
-  const controls = [
-    {
-      icon: 'B',
-      slug: 'search',
-    },
-    {
-      icon: 'A',
-      slug: 'login',
-    }
-  ]
+  const dispatch = useDispatch()
+
+  const Navigation = useSelector(selectNavigation)
 
   return (
     <header className={styles.Header}>
@@ -43,16 +21,15 @@ const Header = () => {
       </div>
       <nav>
         <ul>
-          {navigation.map((item) => (
-            <li key={item.slug}><Link href={item.slug}><a>{item.name}</a></Link></li>
+          {Navigation.items.map((item) => (
+            <li key={item.slug}><Link href={`/` + item.slug}><a>{item.name}</a></Link></li>
           ))}
         </ul>
       </nav>
       <div className={styles.Header_controls}>
-        {controls.map((item) => (
-          <button key={item.slug}>{item.icon}</button>
-        ))}
-        <button><Menu /></button>
+        <button><Search /></button>
+        <button><User /></button>
+        <button onClick={() => dispatch(changeNavigation())}><Menu /></button>
       </div>
     </header>
   )

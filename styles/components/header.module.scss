@@ -51,13 +51,18 @@
         display: flex;
         justify-content: flex-end;
         button {
-            @include text(rem(18), 300, unset, unset, black);
-            font-family: 'Icons';
-            transition: color 1s;
             border: unset;
             background: unset;
             margin-left: vw(21);
+            transition: color 1s;
             cursor: pointer;
+            svg {
+                height: rem(22);
+                stroke-width: 1;
+            }
+            &:last-child {
+                display: none;
+            }
         }
     }
 }
@@ -77,8 +82,13 @@
         &_controls {
             max-width: 50%;
             button {
-                @include text(rem(18 ,$bp-5), 300, unset, unset, black);
                 margin-left: vw(21, $bp-5);
+                svg {
+                    height: rem(22, $bp-5);
+                }
+                &:last-child {
+                    display: block;
+                }
             }
         }
     }

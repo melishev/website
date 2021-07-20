@@ -11,6 +11,7 @@
     padding: 0 vw(42);
     position: fixed;
     bottom: 0;
+    z-index: 12;
     a {
         @include text(rem(14), 600, unset, unset, black);
         text-transform: uppercase;

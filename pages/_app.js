@@ -14,7 +14,7 @@ function Application({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <DefaultSeo
-        title='Main'
+        title='Home'
         titleTemplate='%s | Melishev'
         description='Melishev ™ is a space where works, news and products created by creative and talented people are demonstrated.'
         canonical='https://melishev.ru/'

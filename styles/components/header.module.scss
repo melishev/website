@@ -22,11 +22,11 @@
             @include text(rem(18), 600, unset, unset, black);
             text-transform: uppercase;
             transition: color 1s;
-            span {
-                @include text(rem(16), 400, unset, unset, black);
-                text-transform: capitalize;
-                color: inherit;
-            }
+            // span {
+            //     @include text(rem(16), 400, unset, unset, black);
+            //     text-transform: capitalize;
+            //     color: inherit;
+            // }
         }
     }
     nav {
@@ -58,6 +58,28 @@
             background: unset;
             margin-left: vw(21);
             cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: $bp-5 + px) {
+    .Header {
+        padding: 0 vw(21, $bp-5);
+        &_logo {
+            max-width: 50%;
+            a {
+                @include text(rem(20, $bp-5), 600, unset, unset, black);
+            }
+        }
+        nav {
+            display: none;
+        }
+        &_controls {
+            max-width: 50%;
+            button {
+                @include text(rem(18 ,$bp-5), 300, unset, unset, black);
+                margin-left: vw(21, $bp-5);
+            }
         }
     }
 }

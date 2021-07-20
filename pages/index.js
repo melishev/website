@@ -7,7 +7,7 @@ function Home() {
       <h2>But in August 2021 everything will change!</h2>
       <h3>Subscribe to updates.</h3>
       <form>
-        <input type="email" placeholder="E-mail" />
+        <input type="email" placeholder="E-mail" required />
         <button type="submit">Send</button>
       </form>
     </main>

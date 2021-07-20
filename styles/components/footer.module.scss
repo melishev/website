@@ -19,3 +19,15 @@
         @include text(rem(14), 400, unset, unset, black)
     }
 }
+
+@media screen and (max-width: $bp-5 + px) {
+    .Footer {
+        padding: 0 vw(21, $bp-5);
+        a {
+            @include text(rem(14, $bp-5), 600, unset, unset, black);
+        }
+        p {
+            @include text(rem(14, $bp-5), 400, unset, unset, black)
+        }
+    }
+}

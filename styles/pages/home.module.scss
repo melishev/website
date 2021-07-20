@@ -9,23 +9,44 @@
     h1 {
         @include text(rem(32), 400, unset, unset, black);
         margin-bottom: rem(6);
+        text-align: center;
     }
     h2 {
         @include text(rem(32), 400, unset, unset, black);
         margin-bottom: rem(6);
+        text-align: center;
     }
     h3 {
         @include text(rem(30), 400, unset, unset, black);
         margin-bottom: rem(6);
+        text-align: center;
     }
     input {
         @include text(rem(14), 300, unset, unset, black);
         outline: unset;
         padding: rem(6) vw(21);
+        background: unset;
+        border: 1px solid rgba(160, 160, 160, 0.5);
     }
     button {
         @include text(rem(14), 300, unset, unset, black);
         outline: unset;
         padding: rem(6) vw(21);
+        background: unset;
+        border: 1px solid rgba(160, 160, 160, 0.5);
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: $bp-5 + px) {
+    .Home {
+        input {
+            @include text(rem(14, $bp-5), 300, unset, unset, black);
+            padding: rem(6, $bp-5) vw(21, $bp-5);
+        }
+        button {
+            @include text(rem(14, $bp-5), 300, unset, unset, black);
+            padding: rem(6, $bp-5) vw(21, $bp-5);
+        }
     }
 }

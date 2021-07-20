@@ -1,15 +1,25 @@
-@function rem( $size ) {
-    @if (max-width: $bp-1) {
-        @return $size / $fs-1 * 1rem;
+@function rem( $size, $bp: $bp-1 ) {
+    @if ($bp == $bp-4) {
+        @return $size / $fs-4 * 1rem;
     }
-    // @media screen (max-width: $bp-4) {
-    //     @return $size / $fs-4 * 1rem;
-    // }
-    // @if (max-width: $bp-5) {
-    //     @return $size / $fs-5 * 1rem;
-    // }
+    @if ($bp == $bp-5) {
+        @return $size / $fs-5 * 1rem;
+    }
+    @return $size / $fs-1 * 1rem;
 }
 
-@function vw( $size ) {
+@function vw( $size, $bp: $bp-1 ) {
+    @if ($bp == $bp-2) {
+        @return $size / $bp-2 * 100vw;
+    };
+    @if ($bp == $bp-3) {
+        @return $size / $bp-3 * 100vw;
+    }
+    @if ($bp == $bp-4) {
+        @return $size / $bp-4 * 100vw;
+    }
+    @if ($bp == $bp-5) {
+        @return $size / $bp-5 * 100vw;
+    }
     @return $size / $bp-1 * 100vw
 }

@@ -1,45 +1,24 @@
 {
-  "name": "melishev_web",
-  "version": "1.0.0",
+  "name": "melishev",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
-    "build": "cross-env NODE_ENV=production nuxt build",
-    "start": "cross-env NODE_ENV=production node server/index.js",
-    "generate": "nuxt generate",
-    "test": "jest"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.12.2",
-    "@nuxtjs/google-gtag": "^1.0.4",
-    "@nuxtjs/pwa": "^3.0.2",
-    "@nuxtjs/robots": "^2.4.2",
-    "@nuxtjs/sitemap": "^2.4.0",
-    "core-js": "^3.6.5",
-    "cross-env": "^7.0.3",
-    "cssnano": "^4.1.10",
-    "cssnano-preset-advanced": "^4.0.7",
-    "express": "^4.17.1",
-    "moment-locales-webpack-plugin": "^1.2.0",
-    "mongoose": "^5.11.18",
-    "nodemon": "^2.0.7",
-    "nuxt": "^2.14.5",
-    "nuxt-jsonld": "^1.5.0",
-    "nuxt-start": "^2.15.2",
-    "parallax-js": "^3.1.0",
-    "vue-lazyload": "^1.3.3",
-    "vue-moment": "^4.1.0"
+    "@geist-ui/react-icons": "^1.0.1",
+    "@reduxjs/toolkit": "^1.6.1",
+    "next": "11.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-redux": "^7.2.4",
+    "sass": "~1.32.12"
   },
   "devDependencies": {
-    "@vue/test-utils": "^1.1.0",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "^26.3.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "jest": "^26.4.2",
-    "node-sass": "^4.14.1",
-    "prettier": "^2.1.1",
-    "sass-loader": "^10.0.2",
-    "vue-jest": "^3.0.4"
+    "eslint": "7.30.0",
+    "eslint-config-next": "11.0.1"
   }
 }

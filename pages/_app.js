@@ -33,6 +33,10 @@ function Application({ Component, pageProps }) {
             },
           ],
         }}
+        twitter={{
+          site: '@melishev',
+          cardType: 'summary_large_image',
+        }}
         additionalLinkTags={[
           {
             rel: 'icon',

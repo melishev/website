@@ -5,16 +5,13 @@ import { store } from '../redux/store'
 
 import { DefaultSeo } from 'next-seo'
 
-import Header from 'components/header'
-import Back from 'components/back'
-import ModalNavigation from 'components/modalNavigation'
-import Footer from 'components/footer'
+import { Header, Back, ModalNavigation, Footer } from 'components'
 
 function Application({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <DefaultSeo
-        title='Main'
+        title='Home'
         titleTemplate='%s | Melishev'
         description='Melishev ™ is a space where works, news and products created by creative and talented people are demonstrated.'
         canonical='https://melishev.ru/'

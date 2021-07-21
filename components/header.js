@@ -27,9 +27,9 @@ const Header = () => {
         </ul>
       </nav>
       <div className={styles.Header_controls}>
-        <button type="button"><Search /></button>
-        <button type="button"><User /></button>
-        <button type="button" onClick={() => dispatch(changeNavigation())}><Menu /></button>
+        <button aria-label="Search"><Search /></button>
+        <button aria-label="Login"><User /></button>
+        <button aria-label="Menu" onClick={() => dispatch(changeNavigation())}><Menu /></button>
       </div>
     </header>
   )

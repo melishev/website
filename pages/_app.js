@@ -5,10 +5,7 @@ import { store } from '../redux/store'
 
 import { DefaultSeo } from 'next-seo'
 
-import Header from 'components/header'
-import Back from 'components/back'
-import ModalNavigation from 'components/modalNavigation'
-import Footer from 'components/footer'
+import { Header, Back, ModalNavigation, Footer } from 'components'
 
 function Application({ Component, pageProps }) {
   return (

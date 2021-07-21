@@ -7,7 +7,7 @@
   font-style: normal;
   font-display: swap;
   src:
-    url('/fonts/Gilroy/Gilroy-Thin.woff2') format('woff2')
+    url('/font/Gilroy/Gilroy-Thin.woff2') format('woff2')
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   font-style: normal;
   font-display: swap;
   src:
-    url('/fonts/Gilroy/Gilroy-UltraLight.woff2') format('woff2')
+    url('/font/Gilroy/Gilroy-UltraLight.woff2') format('woff2')
 }
 
 @font-face {
@@ -31,7 +31,7 @@
   font-style: normal;
   font-display: swap;
   src:
-    url('/fonts/Gilroy/Gilroy-Light.woff2') format('woff2')
+    url('/font/Gilroy/Gilroy-Light.woff2') format('woff2')
 }
 
 @font-face {
@@ -43,7 +43,7 @@
   font-style: normal;
   font-display: swap;
   src:
-    url('/fonts/Gilroy/Gilroy-Regular.woff2') format('woff2')
+    url('/font/Gilroy/Gilroy-Regular.woff2') format('woff2')
 }
 
 @font-face {
@@ -55,7 +55,7 @@
   font-style: normal;
   font-display: swap;
   src:
-    url('/fonts/Gilroy/Gilroy-Medium.woff2') format('woff2')
+    url('/font/Gilroy/Gilroy-Medium.woff2') format('woff2')
 }
 
 @font-face {
@@ -67,7 +67,7 @@
   font-style: normal;
   font-display: swap;
   src:
-    url('/fonts/Gilroy/Gilroy-SemiBold.woff2') format('woff2')
+    url('/font/Gilroy/Gilroy-SemiBold.woff2') format('woff2')
 }
 
 @font-face {
@@ -79,7 +79,7 @@
   font-style: normal;
   font-display: swap;
   src:
-    url('/fonts/Gilroy/Gilroy-Bold.woff2') format('woff2')
+    url('/font/Gilroy/Gilroy-Bold.woff2') format('woff2')
 }
 
 @font-face {
@@ -91,7 +91,7 @@
   font-style: normal;
   font-display: swap;
   src:
-    url('/fonts/Gilroy/Gilroy-ExtraBold.woff2') format('woff2')
+    url('/font/Gilroy/Gilroy-ExtraBold.woff2') format('woff2')
 }
 
 @font-face {
@@ -103,7 +103,7 @@
   font-style: normal;
   font-display: swap;
   src:
-    url('/fonts/Gilroy/Gilroy-Heavy.woff2') format('woff2')
+    url('/font/Gilroy/Gilroy-Heavy.woff2') format('woff2')
 }
 
 @font-face {
@@ -115,5 +115,5 @@
   font-style: normal;
   font-display: swap;
   src:
-    url('/fonts/Gilroy/Gilroy-Black.woff2') format('woff2')
+    url('/font/Gilroy/Gilroy-Black.woff2') format('woff2')
 }

@@ -1,29 +1,29 @@
-import styles from 'styles/pages/home.module.scss'
+import styles from './plug.module.scss'
 
 import { useState } from 'react'
 
-function Home() {
+const Plug = () => {
 
   const [email, setEmail] = useState('')
+  const [success, setSuccess] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Thanks`)
-
+    setSuccess(true)
     setEmail('')
   }
 
   return (
-    <main className={styles.Home}>
+    <div className={styles.Plug}>
       <h1>In currently time, web application not available yet.</h1>
       <h2>But in August 2021 everything will change!</h2>
       <h3>Subscribe to updates.</h3>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={success ? styles.success : ''}>
         <input type="email" placeholder="E-mail" value={email} onChange={e => setEmail(e.target.value)} required />
         <button type="submit">Send</button>
       </form>
-    </main>
+    </div>
   )
 }
 
-export default Home
+export default Plug

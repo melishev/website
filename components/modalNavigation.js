@@ -1,4 +1,4 @@
-import styles from 'styles/components/modalNavigation.module.scss'
+import styles from 'scss/components/modalNavigation.module.scss'
 
 import Link from 'next/link'
 
@@ -10,14 +10,14 @@ import { changeNavigation, selectNavigation } from 'redux/state/modals'
 const ModalNavigation = () => {
 
   const dispatch = useDispatch()
-  const Navigation = useSelector(selectNavigation)
+  const navigation = useSelector(selectNavigation)
 
   return (
-    <div className={styles.ModalNavigation + ' ' + (Navigation.open ? styles.ModalNavigation_open : '')}>
+    <div className={styles.ModalNavigation + ' ' + (navigation.open ? styles.ModalNavigation_open : '')}>
       <div className={styles.ModalNavigation_top}><X onClick={() => dispatch(changeNavigation())} /></div>
       <nav>
         <ul>
-          {Navigation.items.map((item) => (
+          {navigation.items.map((item) => (
             <li key={item.slug}><Link href={`/` + item.slug}><a>{item.name}</a></Link></li>
           ))}
         </ul>
@@ -26,4 +26,4 @@ const ModalNavigation = () => {
   )
 }
 
-export default ModalNavigation;
+export default ModalNavigation

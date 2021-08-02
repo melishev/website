@@ -1,8 +1,10 @@
-import styles from 'styles/components/header.module.scss'
+import styles from './header.module.scss'
 
 import Link from 'next/link'
 
 import { Menu, User, Search } from '@geist-ui/react-icons'
+
+import { Logo } from 'components'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { changeNavigation, selectNavigation } from 'redux/state/modals'
@@ -17,7 +19,7 @@ const Header = () => {
   return (
     <header className={styles.Header}>
       <div className={styles.Header_logo}>
-        <Link href="/"><a>Melishev ™{/* <span> | Cheel</span> */}</a></Link>
+        <Logo />
       </div>
       <nav>
         <ul>

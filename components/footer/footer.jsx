@@ -1,11 +1,11 @@
-import styles from 'styles/components/footer.module.scss'
+import styles from './footer.module.scss'
 
 import Link from 'next/link'
 
 const Footer = () => {
   return (
     <footer className={styles.Footer}>
-      <Link href="/">Melishev</Link>
+      <Link href="/">Melishev&#160;™</Link>
       <p>All rights reserved</p>
     </footer>
   )

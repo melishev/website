@@ -1,6 +1,7 @@
+import styles from 'scss/components/back.module.scss'
+
 import { useSelector } from 'react-redux'
 import { selectNavigation } from 'redux/state/modals'
-import styles from 'styles/components/back.module.scss'
 
 const Back = () => {
 

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  Navigation: {
+  navigation: {
     open: false,
     items: [
       {
@@ -29,13 +29,13 @@ const modals = createSlice({
   initialState,
   reducers: {
     changeNavigation(state) {
-      state.Navigation.open = !state.Navigation.open
+      state.navigation.open = !state.navigation.open
     },
   },
 })
 
 export const { changeNavigation } = modals.actions
 
-export const selectNavigation = (state) => state.modals.Navigation
+export const selectNavigation = (state) => state.modals.navigation
 
 export default modals.reducer

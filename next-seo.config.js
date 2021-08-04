@@ -21,12 +21,7 @@ const Seo = {
   additionalLinkTags: [
     {
       rel: 'icon',
-      href: 'https://melishev.ru/favicon.svg',
-    },
-    {
-      rel: 'mask-icon',
-      href: 'https://melishev.ru/favicon.svg',
-      color: 'white',
+      href: 'https://melishev.ru/favicon.ico',
     },
   ],
 }

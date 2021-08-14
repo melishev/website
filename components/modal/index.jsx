@@ -1,13 +1,14 @@
-import styles from 'scss/components/modalNavigation.module.scss'
+import styles from './modal.module.scss'
 
 import Link from 'next/link'
 
 import { X } from '@geist-ui/react-icons'
+import { Subtitle } from 'components/typography'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { changeNavigation, selectNavigation } from 'redux/state/modals'
 
-const ModalNavigation = () => {
+const Modal = () => {
 
   const dispatch = useDispatch()
   const navigation = useSelector(selectNavigation)
@@ -18,7 +19,7 @@ const ModalNavigation = () => {
       <nav>
         <ul>
           {navigation.items.map((item) => (
-            <li key={item.slug}><Link href={`/` + item.slug}><a>{item.name}</a></Link></li>
+            <li key={item.slug}><Link href={`/` + item.slug}><a><Subtitle>{item.name}</Subtitle></a></Link></li>
           ))}
         </ul>
       </nav>
@@ -26,4 +27,4 @@ const ModalNavigation = () => {
   )
 }
 
-export default ModalNavigation
+export default Modal

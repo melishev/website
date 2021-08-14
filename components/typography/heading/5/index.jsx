@@ -1,4 +1,4 @@
-import styles from './heading.module.scss'
+import styles from './styles.module.scss'
 
 const Heading5 = ({ children }) => {
   return (

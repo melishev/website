@@ -3,23 +3,24 @@
 .Logo {
     display: flex;
     align-items: baseline;
-    p {
-        @include text(rem(18), 600, unset, unset, black);
-        text-transform: uppercase;
-    }
     span {
-        @include text(rem(16), 400, unset, unset, black);
-        align-self: normal;
+      &:first-child {
+        font-weight: 600;
+        text-transform: uppercase;
+        color: black;
+      }
+        // @include text(rem(16), 400, unset, unset, black);
+        // align-self: normal;
     }
-    h1 {
-        @include text(rem(16), 400, unset, unset, black);
-    }
+    // h1 {
+    //     @include text(rem(16), 400, unset, unset, black);
+    // }
 }
 
 @media screen and (max-width: $bp-5 + px) {
     .Logo {
-        p {
-            @include text(rem(20, $bp-5), 600, unset, unset, black);
-        }
+        // p {
+        //     @include text(rem(20, $bp-5), 600, unset, unset, black);
+        // }
     }
 }

@@ -5,6 +5,8 @@ export { default as Heading4 } from './heading/4'
 export { default as Heading5 } from './heading/5'
 export { default as Heading6 } from './heading/6'
 
+export { default as Text } from './text'
+export { default as Lead } from './lead'
 export { default as Small } from './small'
 export { default as Strong } from './strong'
 export { default as Subtitle } from './subtitle'

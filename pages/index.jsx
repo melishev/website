@@ -1,6 +1,6 @@
 import styles from 'scss/pages/home.module.scss'
 
-import  { Small, Strong, Subtitle, Blockquote } from 'components/typography'
+import  { Text, Small, Strong, Subtitle, Blockquote } from 'components/typography'
 // import { Plug } from 'components'
 
 function Home() {
@@ -8,6 +8,7 @@ function Home() {
   return (
     <main className={styles.Home}>
       {/* <Plug /> */}
+      <Text>Hello, world!</Text>
       <Small>Hello, world!</Small>
       <Strong>Hello, world!</Strong>
       <Subtitle>Hello, world!</Subtitle>

@@ -9,8 +9,32 @@
       }
     },
     {
-      "method": "PUT",
+      "method": "GET",
+      "path": "/projects/count",
+      "handler": "projects.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/projects/:id",
+      "handler": "projects.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
       "path": "/projects",
+      "handler": "projects.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/:id",
       "handler": "projects.update",
       "config": {
         "policies": []
@@ -18,7 +42,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/projects",
+      "path": "/projects/:id",
       "handler": "projects.delete",
       "config": {
         "policies": []

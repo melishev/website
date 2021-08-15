@@ -15,7 +15,7 @@ function Contacts() {
 
 export async function getStaticProps() {
 
-  const data = await axios.get('http://localhost:1337/contacts')
+  const data = await axios.get('http://localhost:1337/contacts-page')
     .then(res => {
       return res.data
     })

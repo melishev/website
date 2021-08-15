@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "projects",
   "info": {
     "name": "projects"
@@ -10,10 +10,8 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "meta": {
-      "type": "component",
-      "repeatable": false,
-      "component": "seo.meta"
+    "name": {
+      "type": "string"
     }
   }
 }

@@ -1,25 +1,16 @@
 {
   "name": "melishev",
-  "version": "0.1.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@geist-ui/react-icons": "^1.0.1",
-    "@reduxjs/toolkit": "^1.6.1",
-    "next": "11.0.1",
-    "next-seo": "^4.26.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-redux": "^7.2.4",
-    "sass": "~1.32.12"
+    "setup": "yarn && cd back && yarn && cd .. && cd front && yarn",
+    "dev:back": "yarn --cwd back dev",
+    "dev:front": "wait-on http://localhost:1337/admin && yarn --cwd front dev",
+    "dev": "cross-env FORCE_COLOR=1 npm-run-all -l -p dev:*"
   },
   "devDependencies": {
-    "eslint": "7.30.0",
-    "eslint-config-next": "11.0.1"
+    "cross-env": "7.0.3",
+    "npm-run-all": "4.1.5",
+    "wait-on": "5.2.1"
   }
 }

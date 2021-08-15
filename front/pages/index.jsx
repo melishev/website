@@ -1,5 +1,7 @@
 import styles from 'scss/pages/home.module.scss'
 
+import axios from 'axios'
+
 import { Plug } from 'components'
 
 function Home() {
@@ -13,13 +15,10 @@ function Home() {
 
 export async function getStaticProps() {
 
-  const data = {
-    meta: {
-      title: 'Home',
-      description: 'Melishev ™ is a space where works, news and products created by creative and talented people are demonstrated.',
-      canonical: '',
-    }
-  }
+  const data = await axios.get('http://localhost:1337/main')
+    .then(res => {
+      return res.data
+    })
 
   return {
     props: data,

@@ -1,5 +1,7 @@
 import styles from './contacts.module.scss'
 
+import axios from 'axios'
+
 import { Plug } from 'components'
 
 function Contacts() {
@@ -13,13 +15,10 @@ function Contacts() {
 
 export async function getStaticProps() {
 
-  const data = {
-    meta: {
-      title: 'Contacts',
-      description: 'Melishev ™ сontacts',
-      canonical: 'contacts',
-    }
-  }
+  const data = await axios.get('http://localhost:1337/contacts')
+    .then(res => {
+      return res.data
+    })
 
   return {
     props: data,

@@ -1,5 +1,7 @@
 import styles from './projects.module.scss'
 
+import axios from 'axios'
+
 import { Plug } from 'components'
 
 function Projects() {
@@ -13,13 +15,10 @@ function Projects() {
 
 export async function getStaticProps() {
 
-  const data = {
-    meta: {
-      title: 'Projects',
-      description: 'Projects created inside Melishev ™',
-      canonical: 'projects',
-    }
-  }
+  const data = await axios.get('http://localhost:1337/projects')
+    .then(res => {
+      return res.data
+    })
 
   return {
     props: data,

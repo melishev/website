@@ -7,18 +7,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 html, body {
     font-size: $fs-1 + px;
     font-family: 'Gilroy', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 a {
     text-decoration: none;
 }
+
 ul {
     list-style: none;
 }
+
 @media screen and (max-width: $bp-2 + px) {
     html, body {
         font-size: $fs-2 + px;

@@ -1,5 +1,7 @@
 import styles from './news.module.scss'
 
+import axios from 'axios'
+
 import { Plug } from 'components'
 
 function News() {
@@ -13,13 +15,10 @@ function News() {
 
 export async function getStaticProps() {
 
-  const data = {
-    meta: {
-      title: 'News',
-      description: 'News created inside Melishev ™',
-      canonical: 'news',
-    }
-  }
+  const data = await axios.get('http://localhost:1337/newsroom')
+    .then(res => {
+      return res.data
+    })
 
   return {
     props: data,

@@ -1,5 +1,7 @@
 import styles from './products.module.scss'
 
+import axios from 'axios'
+
 import { Plug } from 'components'
 
 function Products() {
@@ -13,13 +15,10 @@ function Products() {
 
 export async function getStaticProps() {
 
-  const data = {
-    meta: {
-      title: 'Products',
-      description: 'Products created inside Melishev ™',
-      canonical: 'products',
-    }
-  }
+  const data = await axios.get('http://localhost:1337/products')
+    .then(res => {
+      return res.data
+    })
 
   return {
     props: data,

@@ -1,6 +1,7 @@
 import 'scss/global.scss'
 
-import { Header, Back, ModalNavigation, Footer } from 'components'
+import { Header, Modal, Footer } from 'components'
+import { Back } from 'components/utils'
 
 import { DefaultSeo } from 'next-seo'
 import Seo from '../next-seo.config'
@@ -21,7 +22,7 @@ function Application({ Component, pageProps }) {
       <Header />
       <Component {...pageProps} />
       <Back />
-      <ModalNavigation />
+      <Modal />
       <Footer />
     </Provider>
   )

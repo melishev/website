@@ -1,10 +1,10 @@
 {
-  "name": "back",
+  "name": "melnitsa",
   "private": true,
-  "version": "0.1.0",
-  "description": "A Strapi application",
+  "version": "3.6.1",
+  "description": "Melnitsa CMS is a special version of strapi cms designed specifically for Melishev ™ customers. It differs from the original with a modified UI, a well-developed customization and additional exclusive features.",
   "scripts": {
-    "develop": "strapi develop",
+    "dev": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi"
@@ -25,10 +25,10 @@
     "mysql": "2.18.1"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Matvey Melishev"
   },
   "strapi": {
-    "uuid": "18dc8a65-7908-4496-a990-8521db462657"
+    "uuid": false
   },
   "engines": {
     "node": ">=10.16.0 <=14.x.x",

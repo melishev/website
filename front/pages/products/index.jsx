@@ -15,7 +15,7 @@ function Products() {
 
 export async function getStaticProps() {
 
-  const data = await axios.get('http://localhost:1337/products-page')
+  const data = await axios.get(`${process.env.api}/products-page`)
     .then(res => {
       return res.data
     })

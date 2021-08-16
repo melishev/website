@@ -15,7 +15,7 @@ function News() {
 
 export async function getStaticProps() {
 
-  const data = await axios.get('http://localhost:1337/news-page')
+  const data = await axios.get(`${process.env.api}/news-page`)
     .then(res => {
       return res.data
     })

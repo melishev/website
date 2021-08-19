@@ -1,0 +1,28 @@
+@import 'scss/imports';
+
+.Home {
+  &_banner {
+    &_slide {
+      &_info {
+        display: flex;
+        color: white;
+        position: absolute;
+        left: 7.5vw;
+        bottom: 2.5vw;
+        span {
+          font-weight: 500;
+          margin-right: .625vw;
+        }
+        div {
+          display: flex;
+          svg {
+            height: 100%;
+            path {
+              fill: currentColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}

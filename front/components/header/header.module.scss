@@ -9,8 +9,9 @@
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(30px);
     padding: 0 vw(42);
-    position: fixed;
+    position: sticky;
     top: 0;
+    z-index: 12;
     &_logo {
         max-width: 20%;
         flex-grow: 1;

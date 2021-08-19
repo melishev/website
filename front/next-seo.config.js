@@ -7,7 +7,7 @@ const Seo = {
     description: 'Melishev ™ is a space where works, news and products created by creative and talented people are demonstrated.',
     images: [
       {
-        url: 'https://melishev.ru/image/ogImage.jpg',
+        url: `https://${process.env.domain}/image/ogImage.jpg`,
         width: 1200,
         height: 630,
         alt: 'Community',
@@ -21,7 +21,7 @@ const Seo = {
   additionalLinkTags: [
     {
       rel: 'icon',
-      href: 'https://melishev.ru/favicon.ico',
+      href: `https://${process.env.domain}/favicon.ico`,
     },
   ],
 }

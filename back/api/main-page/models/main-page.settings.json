@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "pageMain",
   "info": {
-    "name": "main page"
+    "name": "main page",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -14,6 +15,13 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.meta"
+    },
+    "banner": {
+      "type": "component",
+      "repeatable": true,
+      "component": "card.banner",
+      "required": true,
+      "min": 1
     }
   }
 }

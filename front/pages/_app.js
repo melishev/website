@@ -12,7 +12,7 @@ import { Provider } from 'react-redux'
 import { store } from '../redux/store'
 
 // Import components
-import { Header, Modal, Footer } from 'components'
+import { Header, Vidget, Modal, Footer } from 'components'
 import { Back } from 'components/utils'
 
 function Application({ Component, pageProps }) {
@@ -26,6 +26,7 @@ function Application({ Component, pageProps }) {
       />
       <Header />
       <Component {...pageProps} />
+      <Vidget />
       <Back />
       <Modal />
       <Footer />

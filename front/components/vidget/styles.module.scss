@@ -1,0 +1,35 @@
+@import 'scss/imports';
+
+.Vidget {
+  width: 18.75vw;
+  max-height: 98px;
+  padding: 1.25vw;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, .5);
+  backdrop-filter: blur(30px);
+  border-radius: 16px;
+  position: fixed;
+  left: vw(42);
+  bottom: vw(42);
+  &_icon {
+    height: 100%;
+    flex-grow: 2;
+    div {
+      display: flex;
+      svg {
+        height: 100%;
+        path {
+          fill: #868686;
+        }
+      }
+    }
+  }
+  &_info {
+    margin-left: 1.25vw;
+    small {
+      font-weight: 300;
+      color: #868686;
+    }
+  }
+}

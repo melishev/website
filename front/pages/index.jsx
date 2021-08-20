@@ -2,6 +2,8 @@ import styles from './styles.module.scss'
 
 import axios from 'axios'
 
+import Link from 'next/link'
+
 import { ReactSVG } from 'react-svg'
 
 // Import Swiper React components
@@ -32,18 +34,25 @@ function Home(props) {
     <main className={styles.Home}>
       <Swiper {...sliderSettings} className={styles.Home_banner} >
         {props.banner.map( item => (
-          <SwiperSlide key={item.id}>
-            <MaskImage
-              src={`${process.env.api}${item.media.url}`}
-              mime={item.media.mime}
-            />
-            <div className={styles.Home_banner_slide_info}>
-              <Lead>{item.title}</Lead>
-              <ReactSVG src="/svg/arrowRight.svg" />
-            </div>
+          <SwiperSlide className={styles.Home_banner_slide} key={item.id}>
+            <Link href="#">
+              <a>
+                <MaskImage
+                  src={`${process.env.api}${item.media.url}`}
+                  mime={item.media.mime}
+                />
+                <div className={styles.Home_banner_slide_info}>
+                  <Lead>{item.title}</Lead>
+                  <ReactSVG src="/svg/arrowRight.svg" />
+                </div>
+              </a>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
+      <section>
+          
+      </section>
     </main>
   )
 }

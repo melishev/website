@@ -3,6 +3,11 @@
 .Home {
   &_banner {
     &_slide {
+      &:hover &_info {
+        span {
+          margin-right: 1.25vw;
+        }
+      }
       &_info {
         display: flex;
         color: white;
@@ -12,6 +17,7 @@
         span {
           font-weight: 500;
           margin-right: .625vw;
+          transition: all .5s;
         }
         div {
           display: flex;
@@ -24,5 +30,12 @@
         }
       }
     }
+  }
+  section {
+    width: 75vw;
+    height: 100vh;
+    margin-right: 2.5vw;
+    float: right;
+    background-color: rgb(143, 143, 143);
   }
 }

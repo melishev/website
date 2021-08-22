@@ -18,6 +18,7 @@
     div {
       display: flex;
       svg {
+        width: -webkit-fill-available;
         height: 100%;
         path {
           fill: #868686;

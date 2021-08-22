@@ -26,7 +26,9 @@ function Application({ Component, pageProps }) {
       />
       <Header />
       <Component {...pageProps} />
-      <Vidget />
+      <aside>
+        <Vidget />
+      </aside>
       <Back />
       <Modal />
       <Footer />

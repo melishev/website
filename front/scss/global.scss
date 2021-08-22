@@ -1,4 +1,4 @@
-@import './vars';
+@import './imports.scss';
 @import 'public/font/Gilroy/stylesheet.css';
 
 * {
@@ -20,8 +20,18 @@ html, body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
+aside {
+    width: 18.75vw;
+    height: calc(100% - 100px);
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    top: 50px;
+    left: vw(42);
+}
 main {
     flex-grow: 2;
 }

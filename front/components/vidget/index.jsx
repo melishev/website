@@ -6,13 +6,13 @@ import { Small, Text } from 'components/typography'
 
 const Vidget = () => {
   return (
-    <aside className={styles.Vidget}>
+    <div className={styles.Vidget}>
       <ReactSVG className={styles.Vidget_icon} src="/svg/boomBox.svg"/>
       <div className={styles.Vidget_info}>
-        <Text>DOROGO (feat. blago w...</Text>
+        <Text>DOROGO (feat. blago white)</Text>
         <Small>Егор Крид, blago white</Small>
       </div>
-    </aside>
+    </div>
   );
 }
 

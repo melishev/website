@@ -25,6 +25,7 @@ function Home(props) {
     allowTouchMove: false,
     autoplay: {
       delay: 6000,
+      disableOnInteraction: false,
       pauseOnMouseEnter: true,
     },
     speed: 1200,
@@ -43,7 +44,7 @@ function Home(props) {
                 />
                 <div className={styles.Home_banner_slide_info}>
                   <Lead>{item.title}</Lead>
-                  <ReactSVG src="/svg/arrowRight.svg" />
+                  <ReactSVG src="/svg/arrowRight.svg" className={styles.Home_banner_slide_info_icon} />
                 </div>
               </a>
             </Link>

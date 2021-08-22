@@ -3,10 +3,8 @@
 .Home {
   &_banner {
     &_slide {
-      &:hover &_info {
-        span {
-          margin-right: 1.25vw;
-        }
+      &:hover &_info_icon {
+        margin-left: 1.25vw;
       }
       &_info {
         display: flex;
@@ -16,15 +14,21 @@
         bottom: 2.5vw;
         span {
           font-weight: 500;
-          margin-right: .625vw;
-          transition: all .5s;
         }
-        div {
+        &_icon {
+          min-width: 1.25vw;
           display: flex;
-          svg {
-            height: 100%;
-            path {
-              fill: currentColor;
+          align-items: center;
+          margin-left: .625vw;
+          transition: all .5s;
+          div {
+            width: 100%;
+            height: -webkit-fit-content;
+            svg {
+              display: block;
+              path {
+                fill: currentColor;
+              }
             }
           }
         }
@@ -36,6 +40,6 @@
     height: 100vh;
     margin-right: 2.5vw;
     float: right;
-    background-color: rgb(143, 143, 143);
+    background-color: rgb(226, 226, 226);
   }
 }

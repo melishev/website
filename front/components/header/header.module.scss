@@ -8,7 +8,7 @@
     justify-content: space-between;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(30px);
-    padding: 0 vw(42);
+    padding: 0 2.5vw;
     position: sticky;
     top: 0;
     z-index: 12;
@@ -17,6 +17,12 @@
         flex-grow: 1;
         display: flex;
         justify-content: flex-start;
+        a {
+            display: flex;
+            svg {
+                height: 24px;
+            }
+        }
     }
     nav {
         max-width: 60%;
@@ -26,7 +32,7 @@
         ul {
             display: flex;
             li {
-                margin: 0 vw(21);
+                margin: 0 1.25vw;
                 a {
                     font-weight: 300;
                     color: black;
@@ -44,27 +50,20 @@
           color: black;
         }
         button {
-            border: unset;
-            background: unset;
-            margin-left: vw(21);
-            transition: color 1s;
-            cursor: pointer;
-            svg {
-                height: rem(22);
-                stroke-width: 1;
-            }
-            &:last-child {
-                display: none;
-            }
+            display: none;
         }
     }
 }
 
-@media screen and (max-width: $bp-5 + px) {
+@media screen and (max-width: $sm + px) {
     .Header {
-        padding: 0 vw(21, $bp-5);
+        height: 40px;
+        padding: 0 5vw;
         &_logo {
             max-width: 50%;
+            svg {
+                height: 22px;
+            }
         }
         nav {
             display: none;
@@ -75,12 +74,16 @@
               display: none;
             }
             button {
-                margin-left: vw(21, $bp-5);
-                svg {
-                    height: rem(22, $bp-5);
-                }
-                &:last-child {
-                    display: block;
+                display: inline-block;
+                border: unset;
+                background: unset;
+                margin-left: 1.25vw;
+                cursor: pointer;
+                div {
+                    display: flex;
+                    svg {
+                        height: 22px;
+                    }
                 }
             }
         }

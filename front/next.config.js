@@ -13,6 +13,6 @@ module.exports = {
     api: 'https://api.melishev.ru',
   },
   images: {
-    domains: ['https://api.melishev.ru', 'localhost'],
+    domains: ['api.melishev.ru', 'localhost'],
   }
 }

@@ -10,9 +10,9 @@ module.exports = {
   reactStrictMode: true,
   env: {
     domain: 'melishev.ru',
-    api: 'http://localhost:1337',
+    api: 'http://api.melishev.ru',
   },
   images: {
-    domains: ['localhost'],
+    domains: ['https://api.melishev.ru', 'localhost'],
   }
 }

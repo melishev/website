@@ -3,7 +3,7 @@
 .ModalNavigation {
   width: 100%;
   background: white;
-  padding: rem(21, $bp-5) vw(21, $bp-5) rem(71, $bp-5);
+  padding: 5vw 5vw calc(5vw + 50px);
   position: fixed;
   bottom: 0;
   z-index: 11;
@@ -19,9 +19,9 @@
   nav {
     ul {
       li {
-        margin-top: rem(10.5, $bp-5);
+        margin-top: 2.5vw;
         &:first-child {
-          margin-top: rem(21, $bp-5);
+          margin-top: 5vw;
         }
         a {
           color: black;

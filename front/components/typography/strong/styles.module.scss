@@ -1,14 +1,13 @@
 @import 'scss/imports';
 
 .Strong {
-  font-family: 'Gilroy', sans-serif;
   font-size: 16px;
   // font-weight: $weight;
   // letter-spacing: .5px;
   line-height: 1.5;
 }
 
-@media screen and (max-width: $bp-5 + px) {
+@media screen and (max-width: $sm + px) {
   .Small {
     font-size: 14px;
   }

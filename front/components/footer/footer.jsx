@@ -2,7 +2,7 @@ import styles from './footer.module.scss'
 
 import Link from 'next/link'
 
-import { Small } from 'components/typography'
+import { Small, Input } from 'components/typography'
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
           <Small>Melishev&#160;™</Small>
         </a>
       </Link>
-      <Small>All rights reserved</Small>
+      <Input>All rights reserved</Input>
     </footer>
   )
 }

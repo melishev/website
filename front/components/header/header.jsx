@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import LogoSVG from 'public/svg/logo.svg'
 
-import { Text, Lead } from 'components/typography'
+import { Small, Lead } from 'components/typography'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { changeNavigation, selectNavigation } from 'redux/state/modals'
@@ -41,7 +41,7 @@ const Header = () => {
         </ul>
       </nav>
       <div className={styles.Header_controls}>
-        <Text>Moscow 20:35</Text>
+        <Small>Moscow 20:35</Small>
         {/* <button aria-label="Search"><Search /></button>
         <button aria-label="Login"><User /></button> */}
         <button aria-label="Menu" onClick={() => dispatch(changeNavigation())}><ReactSVG src="/svg/burger.svg" /></button>

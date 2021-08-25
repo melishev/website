@@ -3,7 +3,7 @@ import styles from './modal.module.scss'
 import Link from 'next/link'
 
 import { X } from '@geist-ui/react-icons'
-import { Subtitle } from 'components/typography'
+import { Lead } from 'components/typography'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { changeNavigation, selectNavigation } from 'redux/state/modals'
@@ -19,7 +19,7 @@ const Modal = () => {
       <nav>
         <ul>
           {navigation.items.map((item) => (
-            <li key={item.slug}><Link href={`/` + item.slug}><a><Subtitle>{item.name}</Subtitle></a></Link></li>
+            <li key={item.slug}><Link href={`/` + item.slug}><a><Lead>{item.name}</Lead></a></Link></li>
           ))}
         </ul>
       </nav>

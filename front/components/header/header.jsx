@@ -7,7 +7,8 @@ import LogoSVG from 'public/svg/logo.svg'
 import { Small, Lead } from 'components/typography'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { changeNavigation, selectNavigation } from 'redux/state/modals'
+import { openNavigation } from 'redux/state/modals'
+import { selectDataNavigation } from 'redux/state/global'
 
 import { ReactSVG } from 'react-svg'
 
@@ -16,7 +17,7 @@ const Header = () => {
 
   const dispatch = useDispatch()
 
-  const Navigation = useSelector(selectNavigation)
+  const dataNavigation = useSelector(selectDataNavigation)
 
   return (
     <header className={styles.Header}>
@@ -29,7 +30,7 @@ const Header = () => {
       </div>
       <nav>
         <ul>
-          {Navigation.items.map((item) => (
+          {dataNavigation.map((item) => (
             <li key={item.slug}>
               <Link href={`/` + item.slug}>
                 <a>
@@ -44,7 +45,7 @@ const Header = () => {
         <Small>Moscow 20:35</Small>
         {/* <button aria-label="Search"><Search /></button>
         <button aria-label="Login"><User /></button> */}
-        <button aria-label="Menu" onClick={() => dispatch(changeNavigation())}><ReactSVG src="/svg/burger.svg" /></button>
+        <button aria-label="Menu" onClick={() => dispatch(openNavigation())}><ReactSVG src="/svg/burger.svg" /></button>
       </div>
     </header>
   )

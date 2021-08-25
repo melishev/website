@@ -1,13 +1,13 @@
 import styles from './back.module.scss'
 
 import { useSelector } from 'react-redux'
-import { selectNavigation } from 'redux/state/modals'
+import { selectModalNavigation } from 'redux/state/modals'
 
 const Back = () => {
 
-  const Navigation = useSelector(selectNavigation)
+  const modalNavigation = useSelector(selectModalNavigation)
 
-  return <div className={styles.Back + ' ' + (Navigation.open ? styles.Back_open : '')}></div>
+  return <div className={styles.Back + ' ' + (modalNavigation.open ? styles.Back_open : '')}></div>
 }
 
 export default Back

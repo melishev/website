@@ -3,24 +3,6 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   navigation: {
     open: false,
-    items: [
-      {
-        name: 'Projects',
-        slug: 'projects',
-      },
-      {
-        name: 'News',
-        slug: 'news',
-      },
-      {
-        name: 'Products',
-        slug: 'products',
-      },
-      {
-        name: 'Contacts',
-        slug: 'contacts',
-      }
-    ]
   },
 }
 
@@ -28,14 +10,17 @@ const modals = createSlice({
   name: 'modals',
   initialState,
   reducers: {
-    changeNavigation(state) {
-      state.navigation.open = !state.navigation.open
+    openNavigation(state) {
+      state.navigation.open = true
+    },
+    closeNavigation(state) {
+      state.navigation.open = false
     },
   },
 })
 
-export const { changeNavigation } = modals.actions
+export const { openNavigation, closeNavigation } = modals.actions
 
-export const selectNavigation = (state) => state.modals.navigation
+export const selectModalNavigation = (state) => state.modals.navigation
 
 export default modals.reducer

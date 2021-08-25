@@ -19,7 +19,12 @@
       "pluginOptions": {}
     },
     "title": {
-      "type": "text"
+      "type": "string"
+    },
+    "link": {
+      "type": "string",
+      "default": "#",
+      "required": true
     }
   }
 }

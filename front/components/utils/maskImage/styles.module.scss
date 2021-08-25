@@ -2,19 +2,14 @@
 
 .MaskImage {
   width: 100%;
+  height: calc(100vw / 3);
   position: relative;
-  img {
-
-  }
   video {
     position: absolute;
-    width: 100%;
-    height: 100%;
   }
-  svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-    opacity: 0;
+}
+@media screen and (max-width: $lg + px) {
+  .MaskImage {
+    height: calc(100% / 2);
   }
 }

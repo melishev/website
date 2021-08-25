@@ -2,8 +2,6 @@ import styles from './styles.module.scss'
 
 import Image from 'next/image'
 
-import Mask3x1 from 'assets/svg/mask/3x1.svg'
-
 const MaskImage = (props) => {
 
 	return (
@@ -16,9 +14,8 @@ const MaskImage = (props) => {
 					objectPosition="center"
 				/>
 			:
-				<video src={props.src} autoPlay></video>
+				<video src={props.src} controls autoPlay></video>
 			}
-			<Mask3x1 className={styles.MaskImage} />
 		</div>
 	);
 }

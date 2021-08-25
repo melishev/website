@@ -44,26 +44,32 @@ ul {
     list-style: none;
 }
 
-@media screen and (max-width: $bp-2 + px) {
-    html, body {
-        font-size: $fs-2 + px;
+@media screen and (max-width: $sm + px) {
+    aside {
+        display: none;
     }
 }
 
-@media screen and (max-width: $bp-3 + px) {
-    html, body {
-        font-size: $fs-3 + px;
-    }
-}
+// @media screen and (max-width: $bp-2 + px) {
+//     html, body {
+//         font-size: $fs-2 + px;
+//     }
+// }
 
-@media screen and (max-width: $bp-4 + px) {
-    html, body {
-        font-size: $fs-4 + px;
-    }
-}
+// @media screen and (max-width: $bp-3 + px) {
+//     html, body {
+//         font-size: $fs-3 + px;
+//     }
+// }
 
-@media screen and (max-width: $bp-5 + px) {
-    html, body {
-        font-size: $fs-5 + px;
-    }
-}
+// @media screen and (max-width: $bp-4 + px) {
+//     html, body {
+//         font-size: $fs-4 + px;
+//     }
+// }
+
+// @media screen and (max-width: $bp-5 + px) {
+//     html, body {
+//         font-size: $fs-5 + px;
+//     }
+// }

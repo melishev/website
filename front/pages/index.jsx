@@ -34,9 +34,9 @@ function Home(props) {
   return (
     <main className={styles.Home}>
       <Swiper {...sliderSettings} className={styles.Home_banner} >
-        {props.banner.map( item => (
+        {props.banner.map(item => (
           <SwiperSlide className={styles.Home_banner_slide} key={item.id}>
-            <Link href="#">
+            <Link href={item.link}>
               <a>
                 <MaskImage
                   src={`${process.env.api}${item.media.url}`}

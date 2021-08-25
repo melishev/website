@@ -43,3 +43,16 @@
     background-color: rgb(226, 226, 226);
   }
 }
+
+@media screen and (max-width: $sm + px) {
+  .Home {
+    section {
+      width: 100%;
+      height: 100vh;
+      margin-right: unset;
+      padding: 0 5vw;
+      float: unset;
+      background-color: rgb(226, 226, 226);
+    }
+  }
+}

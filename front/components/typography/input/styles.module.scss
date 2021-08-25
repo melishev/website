@@ -1,0 +1,14 @@
+@import 'scss/imports';
+
+.Input {
+  font-size: 14px;
+  // font-weight: $weight;
+  // letter-spacing: .5px;
+  line-height: 1;
+}
+
+@media screen and (max-width: $sm + px) {
+  .Input {
+    font-size: 12px;
+  }
+}

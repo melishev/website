@@ -4,6 +4,8 @@ import axios from 'axios'
 
 import { Plug } from 'components'
 
+import { fetchPageData } from 'utils/fetchPageData'
+
 function Projects({ projects }) {
 
   return (
@@ -15,10 +17,15 @@ function Projects({ projects }) {
 
 export async function getStaticProps() {
 
-  const { data } = await axios.get(`${process.env.api}/projects-page`)
+  const dataPage = await fetchPageData('projects')
+  
+  const notFound = dataPage ? false : true
 
   return {
-    props: data
+    props: {
+      ...dataPage
+    },
+    notFound
   }
 }
 

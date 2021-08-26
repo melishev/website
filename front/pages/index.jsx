@@ -16,6 +16,8 @@ import { Lead } from 'components/typography'
 
 import { MaskImage } from 'components/utils'
 
+import { fetchPageData } from 'utils/fetchPageData'
+
 function Home(props) {
 
   const sliderSettings = {
@@ -60,10 +62,15 @@ function Home(props) {
 
 export async function getStaticProps() {
 
-  const { data } = await axios.get(`${process.env.api}/main-page`)
+  const dataPage = await fetchPageData('main')
+  
+  const notFound = dataPage ? false : true
 
   return {
-    props: data,
+    props: {
+      ...dataPage
+    },
+    notFound
   }
 }
 

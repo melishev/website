@@ -4,6 +4,8 @@ import axios from 'axios'
 
 import { Plug } from 'components'
 
+import { fetchPageData } from 'utils/fetchPageData'
+
 function Products() {
 
   return (
@@ -15,13 +17,15 @@ function Products() {
 
 export async function getStaticProps() {
 
-  const data = await axios.get(`${process.env.api}/products-page`)
-    .then(res => {
-      return res.data
-    })
+  const dataPage = await fetchPageData('products')
+  
+  const notFound = dataPage ? false : true
 
   return {
-    props: data,
+    props: {
+      ...dataPage
+    },
+    notFound
   }
 }
 

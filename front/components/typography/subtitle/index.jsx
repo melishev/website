@@ -1,9 +1,14 @@
-import styles from './styles.module.scss'
+import styles from './styles.module.scss';
+import propTypes from 'prop-types';
 
 const Subtitle = ({ children }) => {
   return (
     <p className={styles.Subtitle}>{children}</p>
-  )
-}
+  );
+};
 
-export default Subtitle
+Subtitle.propTypes = {
+  children: propTypes.string.isRequired,
+};
+
+export default Subtitle;

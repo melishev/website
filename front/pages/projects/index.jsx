@@ -1,32 +1,28 @@
-import styles from './projects.module.scss'
+import styles from './projects.module.scss';
 
-import axios from 'axios'
+import { Plug } from 'components';
 
-import { Plug } from 'components'
+import { fetchPageData } from 'utils/fetchPageData';
 
-import { fetchPageData } from 'utils/fetchPageData'
-
-function Projects({ projects }) {
-
+function Projects() {
   return (
     <main className={styles.Projects}>
       <Plug />
     </main>
-  )
+  );
 }
 
 export async function getStaticProps() {
+  const dataPage = await fetchPageData('projects');
 
-  const dataPage = await fetchPageData('projects')
-  
-  const notFound = dataPage ? false : true
+  const notFound = !dataPage;
 
   return {
     props: {
-      ...dataPage
+      ...dataPage,
     },
-    notFound
-  }
+    notFound,
+  };
 }
 
-export default Projects
+export default Projects;

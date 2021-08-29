@@ -1,32 +1,28 @@
-import styles from './products.module.scss'
+import styles from './products.module.scss';
 
-import axios from 'axios'
+import { Plug } from 'components';
 
-import { Plug } from 'components'
-
-import { fetchPageData } from 'utils/fetchPageData'
+import { fetchPageData } from 'utils/fetchPageData';
 
 function Products() {
-
   return (
     <main className={styles.Products}>
       <Plug />
     </main>
-  )
+  );
 }
 
 export async function getStaticProps() {
+  const dataPage = await fetchPageData('products');
 
-  const dataPage = await fetchPageData('products')
-  
-  const notFound = dataPage ? false : true
+  const notFound = !dataPage;
 
   return {
     props: {
-      ...dataPage
+      ...dataPage,
     },
-    notFound
-  }
+    notFound,
+  };
 }
 
-export default Products
+export default Products;

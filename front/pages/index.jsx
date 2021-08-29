@@ -1,10 +1,15 @@
-import styles from './styles.module.scss'
+import styles from './styles.module.scss';
+import propTypes from 'prop-types';
 
-import axios from 'axios'
+import Link from 'next/link';
 
-import Link from 'next/link'
+import { ReactSVG } from 'react-svg';
 
-import { ReactSVG } from 'react-svg'
+import { Lead } from 'components/typography';
+
+import { MaskImage } from 'components/utils';
+
+import { fetchPageData } from 'utils/fetchPageData';
 
 // Import Swiper React components
 import SwiperCore, { Autoplay } from 'swiper';
@@ -12,14 +17,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // install Swiper modules
 SwiperCore.use([Autoplay]);
 
-import { Lead } from 'components/typography'
-
-import { MaskImage } from 'components/utils'
-
-import { fetchPageData } from 'utils/fetchPageData'
-
-function Home(props) {
-
+function Home({ banner }) {
   const sliderSettings = {
     spaceBetween: 0,
     slidesPerView: 1,
@@ -31,18 +29,18 @@ function Home(props) {
       pauseOnMouseEnter: true,
     },
     speed: 1200,
-  }
+  };
 
   return (
     <main className={styles.Home}>
-      <Swiper {...sliderSettings} className={styles.Home_banner} >
-        {props.banner.map(item => (
+      <Swiper {...sliderSettings} className={styles.Home_banner}>
+        {banner.map((item) => (
           <SwiperSlide className={styles.Home_banner_slide} key={item.id}>
             <Link href={item.link}>
               <a>
                 <MaskImage
-                  src={`${process.env.api}${item.media.url}`}
-                  mime={item.media.mime}
+                  mask="3x1"
+                  src={item.media.url}
                 />
                 <div className={styles.Home_banner_slide_info}>
                   <Lead>{item.title}</Lead>
@@ -53,25 +51,26 @@ function Home(props) {
           </SwiperSlide>
         ))}
       </Swiper>
-      <section>
-          
-      </section>
+      <section />
     </main>
-  )
+  );
 }
 
-export async function getStaticProps() {
+Home.propTypes = {
+  banner: propTypes.arrayOf(propTypes.object).isRequired,
+};
 
-  const dataPage = await fetchPageData('main')
-  
-  const notFound = dataPage ? false : true
+export async function getStaticProps() {
+  const dataPage = await fetchPageData('main');
+
+  const notFound = !dataPage;
 
   return {
     props: {
-      ...dataPage
+      ...dataPage,
     },
-    notFound
-  }
+    notFound,
+  };
 }
 
-export default Home
+export default Home;

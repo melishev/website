@@ -3,7 +3,6 @@
 .Home {
   &_banner {
     &_slide {
-      height: calc(100vw / 3);
       &:hover &_info_icon {
         margin-left: 1.25vw;
       }

@@ -2,22 +2,35 @@
 
 .CardNewsSmall {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   background: white;
   border-radius: 8px;
   overflow: hidden;
   &_info {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: .625vw 1.25vw;
     small {
       font-weight: 300;
       color: black;
     }
     h4 {
+      flex-grow: 1;
       font-weight: 600;
       color: black;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -moz-box;
+      -moz-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-clamp: 2;
+      box-orient: vertical;
       margin: .625vw 0;
     }
     p {

@@ -1,8 +1,8 @@
-import styles from './footer.module.scss'
+import styles from './footer.module.scss';
 
-import Link from 'next/link'
+import Link from 'next/link';
 
-import { Small, Input } from 'components/typography'
+import { Small, Input } from 'components/typography';
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
       </Link>
       <Input>All rights reserved</Input>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

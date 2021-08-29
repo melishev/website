@@ -24,6 +24,15 @@
       flex-grow: 2;
       font-weight: 600;
       color: black;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -moz-box;
+      -moz-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      line-clamp: 5;
+      box-orient: vertical;
     }
     p {
       font-weight: 300;

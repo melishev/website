@@ -8,7 +8,7 @@ const Small = ({ children }) => {
 };
 
 Small.propTypes = {
-  children: propTypes.string.isRequired,
+  children: propTypes.node.isRequired,
 };
 
 export default Small;

@@ -4,5 +4,11 @@
   font-size: 20px;
   // font-weight: $weight;
   // letter-spacing: .5px;
-  line-height: 1.2;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: $sm + px) {
+  .Heading {
+    font-size: 18px;
+  }
 }

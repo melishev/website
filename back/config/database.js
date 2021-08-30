@@ -6,11 +6,10 @@ module.exports = ({ env }) => ({
       connector: 'bookshelf',
       settings: {
         client: 'mysql',
-        host: env('DATABASE_HOST', 'localhost'),
-        port: env.int('DATABASE_PORT', 8889),
-        database: env('DATABASE_NAME', 'melishev_dev'),
-        username: env('DATABASE_USERNAME', 'root'),
-        password: env('DATABASE_PASSWORD', 'root'),
+        host: env('DATABASE_HOST', 'talanov.beget.tech'),
+        database: env('DATABASE_NAME', 'talanov_mel_dev'),
+        username: env('DATABASE_USERNAME', 'talanov_mel_dev'),
+        password: env('DATABASE_PASSWORD', 'on&EZzL6'),
         ssl: env.bool('DATABASE_SSL', false),
       },
       options: {}

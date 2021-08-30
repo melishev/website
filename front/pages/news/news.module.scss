@@ -18,3 +18,23 @@
         }
     }
 }
+
+@media screen and (max-width: $sm + px) {
+    .News {
+        &_section {
+            width: 100vw;
+            margin-right: unset;
+            padding: 5vw;
+            float: unset;
+            h1 {
+                margin: 5vw 0 5vw 5vw;
+            }
+            &_cards {
+                display: flex;
+                flex-direction: column;
+                grid-gap: 1.25vw;
+                padding-bottom: 1.25vw;
+            }
+        }
+    }
+}

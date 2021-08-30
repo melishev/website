@@ -9,7 +9,13 @@ import { CardNewsBig, CardNewsSmall } from 'components';
 import { fetchPageData } from 'utils/fetchPageData';
 import axios from 'axios';
 
+import { useMediaQuery } from 'react-responsive';
+
 function News({ articles }) {
+  const isTablet = useMediaQuery({
+    query: '(max-width: 1024px)',
+  });
+
   return (
     <main className={styles.News}>
       <section className={styles.News_section}>
@@ -20,12 +26,23 @@ function News({ articles }) {
               ? (
                 <Link href={`/${article.slug}`} key={article.id}>
                   <a style={{ gridColumnStart: 1, gridColumnEnd: 3 }}>
-                    <CardNewsBig
-                      media={article.media}
-                      category={article.category.name}
-                      title={article.title}
-                      date={article.date}
-                    />
+                    {!isTablet
+                      ? (
+                        <CardNewsBig
+                          media={article.media}
+                          category={article.category}
+                          title={article.title}
+                          date={article.date}
+                        />
+                      )
+                      : (
+                        <CardNewsSmall
+                          media={article.media}
+                          category={article.category}
+                          title={article.title}
+                          date={article.date}
+                        />
+                      )}
                   </a>
                 </Link>
               )
@@ -34,7 +51,7 @@ function News({ articles }) {
                   <a>
                     <CardNewsSmall
                       media={article.media}
-                      category={article.category.name}
+                      category={article.category}
                       title={article.title}
                       date={article.date}
                     />

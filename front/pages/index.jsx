@@ -51,7 +51,6 @@ function Home({ banner }) {
           </SwiperSlide>
         ))}
       </Swiper>
-      <section />
     </main>
   );
 }

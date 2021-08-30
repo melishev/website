@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 
 import 'scss/global.scss';
-import propTypes from 'prop-types';
 
 // Import Swiper styles
 import 'swiper/swiper.scss';
@@ -14,11 +13,9 @@ import Seo from '../next-seo.config';
 import { Provider } from 'react-redux';
 import { store } from '../redux/store';
 
-// Import components
-import { Header, Vidget, Modal, Footer } from 'components';
-import { Back } from 'components/utils';
-
 function Application({ Component, pageProps }) {
+  const getLayout = Component.getLayout || ((page) => page);
+
   return (
     <Provider store={store}>
       <DefaultSeo
@@ -27,20 +24,9 @@ function Application({ Component, pageProps }) {
         canonical={pageProps.statusCode ? '' : `https://${process.env.domain}/${pageProps.meta.canonical}`}
         {...Seo}
       />
-      <Header />
-      <Component {...pageProps} />
-      <aside>
-        <Vidget />
-      </aside>
-      <Back />
-      <Modal />
-      <Footer />
+      {getLayout(<Component {...pageProps} />)}
     </Provider>
   );
 }
-
-Application.propTypes = {
-  Component: propTypes.elementType.isRequired,
-};
 
 export default Application;

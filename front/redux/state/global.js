@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   navigation: [
@@ -17,15 +17,15 @@ const initialState = {
     // {
     //   name: 'Контакты',
     //   slug: 'contacts',
-    // }
+    // },
   ],
-}
+};
 
 const global = createSlice({
   name: 'global',
   initialState,
-})
+});
 
-export const selectDataNavigation = (state) => state.global.navigation
+export const selectDataNavigation = (state) => state.global.navigation;
 
-export default global.reducer
+export default global.reducer;

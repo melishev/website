@@ -1,6 +1,8 @@
 import styles from './news.module.scss';
 import propTypes from 'prop-types';
 
+import Layout from 'layouts/default';
+
 import Link from 'next/link';
 
 import { Heading1 } from 'components/typography';
@@ -18,55 +20,61 @@ function News({ articles }) {
 
   return (
     <main className={styles.News}>
-      <section className={styles.News_section}>
-        <Heading1>Новости</Heading1>
-        <div className={styles.News_section_cards}>
-          {articles.map((article, index) => (
-            index % 5 === 0
-              ? (
-                <Link href={`/${article.slug}`} key={article.id}>
-                  <a style={{ gridColumnStart: 1, gridColumnEnd: 3 }}>
-                    {!isTablet
-                      ? (
-                        <CardNewsBig
-                          media={article.media}
-                          category={article.category}
-                          title={article.title}
-                          date={article.date}
-                        />
-                      )
-                      : (
-                        <CardNewsSmall
-                          media={article.media}
-                          category={article.category}
-                          title={article.title}
-                          date={article.date}
-                        />
-                      )}
-                  </a>
-                </Link>
-              )
-              : (
-                <Link href={`/${article.slug}`} key={article.id}>
-                  <a>
-                    <CardNewsSmall
-                      media={article.media}
-                      category={article.category}
-                      title={article.title}
-                      date={article.date}
-                    />
-                  </a>
-                </Link>
-              )
-          ))}
-        </div>
-      </section>
+      <Heading1>Новости</Heading1>
+      <div className={styles.News_cards}>
+        {articles.map((article, index) => (
+          index % 5 === 0
+            ? (
+              <Link href={`/${article.slug}`} key={article.id}>
+                <a style={{ gridColumnStart: 1, gridColumnEnd: 3 }}>
+                  {!isTablet
+                    ? (
+                      <CardNewsBig
+                        media={article.media}
+                        category={article.category}
+                        title={article.title}
+                        date={article.date}
+                      />
+                    )
+                    : (
+                      <CardNewsSmall
+                        media={article.media}
+                        category={article.category}
+                        title={article.title}
+                        date={article.date}
+                      />
+                    )}
+                </a>
+              </Link>
+            )
+            : (
+              <Link href={`/${article.slug}`} key={article.id}>
+                <a>
+                  <CardNewsSmall
+                    media={article.media}
+                    category={article.category}
+                    title={article.title}
+                    date={article.date}
+                  />
+                </a>
+              </Link>
+            )
+        ))}
+      </div>
     </main>
   );
 }
 
 News.propTypes = {
   articles: propTypes.arrayOf(propTypes.object).isRequired,
+};
+
+News.getLayout = function getLayout(page) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  );
 };
 
 export async function getStaticProps() {

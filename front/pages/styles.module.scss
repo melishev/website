@@ -2,6 +2,8 @@
 
 .Home {
   &_banner {
+    grid-area: banner;
+    width: 100%;
     &_slide {
       &:hover &_info_icon {
         margin-left: 1.25vw;

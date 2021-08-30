@@ -1,11 +1,13 @@
 import styles from './styles.module.scss';
 import propTypes from 'prop-types';
 
+import Layout from 'layouts/default';
+
 import Link from 'next/link';
 
 import { ReactSVG } from 'react-svg';
 
-import { Lead } from 'components/typography';
+import { Lead, Text } from 'components/typography';
 
 import { MaskImage } from 'components/utils';
 
@@ -32,7 +34,7 @@ function Home({ banner }) {
   };
 
   return (
-    <main className={styles.Home}>
+    <>
       <Swiper {...sliderSettings} className={styles.Home_banner}>
         {banner.map((item) => (
           <SwiperSlide className={styles.Home_banner_slide} key={item.id}>
@@ -51,12 +53,23 @@ function Home({ banner }) {
           </SwiperSlide>
         ))}
       </Swiper>
-    </main>
+      <main className={styles.Home}>
+        <Text>Привет</Text>
+      </main>
+    </>
   );
 }
 
 Home.propTypes = {
   banner: propTypes.arrayOf(propTypes.object).isRequired,
+};
+
+Home.getLayout = function getLayout(page) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  );
 };
 
 export async function getStaticProps() {

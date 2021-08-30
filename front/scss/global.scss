@@ -16,24 +16,34 @@ html, body {
 }
 
 #__next {
-    height: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "banner banner"
+        "aside main"
+        "footer footer";
+}
+
+header {
+    grid-area: header;
 }
 
 aside {
-    width: 18.75vw;
-    height: calc((100% - 100px) - 2.5vw);
+    grid-area: aside;
+    width: 21.25vw;
     display: flex;
     flex-direction: column-reverse;
-    position: absolute;
-    top: 50px;
-    left: 1.25vw;
+    padding: 2.5vw 1.25vw;
 }
+
 main {
-    flex-grow: 2;
+    grid-area: main;
+    width: 78.75vw;
+    padding-right: 2.5vw;
+}
+
+footer {
+    grid-area: footer;
 }
 
 a {
@@ -47,6 +57,10 @@ ul {
 @media screen and (max-width: $sm + px) {
     aside {
         display: none;
+    }
+    main {
+        width: 100vw;
+        padding: 0 5vw;
     }
 }
 

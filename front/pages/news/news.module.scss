@@ -1,40 +1,29 @@
 @import 'scss/imports';
 
 .News {
-    &_section {
-        width: 76.25vw;
-        margin-right: 2.5vw;
-        float: right;
-        h1 {
-            font-weight: normal;
-            color: black;
-            margin: 2.5vw 0;
-        }
-        &_cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 1.25vw;
-            padding-bottom: 1.25vw;
-        }
+    h1 {
+        font-weight: normal;
+        color: black;
+        margin: 2.5vw 0;
+    }
+    &_cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.25vw;
+        padding-bottom: 1.25vw;
     }
 }
 
 @media screen and (max-width: $sm + px) {
     .News {
-        &_section {
-            width: 100vw;
-            margin-right: unset;
-            padding: 5vw;
-            float: unset;
-            h1 {
-                margin: 5vw 0 5vw 5vw;
-            }
-            &_cards {
-                display: flex;
-                flex-direction: column;
-                grid-gap: 1.25vw;
-                padding-bottom: 1.25vw;
-            }
+        h1 {
+            margin: 10vw 0 5vw 5vw;
+        }
+        &_cards {
+            display: flex;
+            flex-direction: column;
+            grid-gap: 5vw;
+            padding-bottom: 5vw;
         }
     }
 }

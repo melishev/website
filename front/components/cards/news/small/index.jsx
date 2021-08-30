@@ -20,7 +20,11 @@ const CardNewsSmall = ({ media, category, title, date }) => {
 };
 
 CardNewsSmall.propTypes = {
-  media: propTypes.objectOf(propTypes.string),
+  media: propTypes.shape({
+    id: propTypes.number,
+    url: propTypes.string,
+    alternativeText: propTypes.string,
+  }),
   category: propTypes.shape({
     id: propTypes.number,
     name: propTypes.string,

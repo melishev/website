@@ -8,7 +8,11 @@ const Small = ({ children }) => {
 };
 
 Small.propTypes = {
-  children: propTypes.node.isRequired,
+  children: propTypes.node,
+};
+
+Small.defaultProps = {
+  children: 'Text for Melishev ™',
 };
 
 export default Small;

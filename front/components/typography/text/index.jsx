@@ -8,7 +8,11 @@ const Text = ({ children }) => {
 };
 
 Text.propTypes = {
-  children: propTypes.string.isRequired,
+  children: propTypes.string,
+};
+
+Text.defaultProps = {
+  children: 'Text for Melishev ™',
 };
 
 export default Text;

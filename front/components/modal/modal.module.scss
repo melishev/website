@@ -15,12 +15,10 @@
   &_top {
     display: flex;
     justify-content: flex-end;
-    &_svg {
-      width: 100%;
+    div {
       display: flex;
-      justify-content: flex-end;
       svg {
-        height: 100%;
+        height: 22px;
       }
     }
   }

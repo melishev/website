@@ -16,7 +16,7 @@ const Modal = () => {
 
   return (
     <div className={`${styles.ModalNavigation} ${modalNavigation.open ? styles.ModalNavigation_open : ''}`}>
-      <div className={styles.ModalNavigation_top}><ReactSVG className={styles.ModalNavigation_top_svg} src="/svg/close.svg" onClick={() => dispatch(closeNavigation())} /></div>
+      <div className={styles.ModalNavigation_top}><ReactSVG src="/svg/close.svg" onClick={() => dispatch(closeNavigation())} /></div>
       <nav>
         <ul>
           {dataNavigation.map((item) => (

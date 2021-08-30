@@ -14,9 +14,10 @@ import axios from 'axios';
 import { useMediaQuery } from 'react-responsive';
 
 function News({ articles }) {
-  const isTablet = useMediaQuery({
-    query: '(max-width: 1024px)',
-  });
+  const isTablet = useMediaQuery(
+    { maxDeviceWidth: 1024 },
+    { deviceWidth: 1024 },
+  );
 
   return (
     <main className={styles.News}>

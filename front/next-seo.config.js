@@ -24,6 +24,6 @@ const Seo = {
       href: `https://${process.env.domain}/favicon.ico`,
     },
   ],
-}
+};
 
-export default Seo
+export default Seo;

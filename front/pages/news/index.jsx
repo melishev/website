@@ -6,60 +6,29 @@ import Layout from 'layouts/default';
 import Link from 'next/link';
 
 import { Heading1 } from 'components/typography';
-import { CardNewsBig, CardNewsSmall } from 'components';
+import { CardNewsSmall } from 'components';
 
 import { fetchPageData } from 'utils/fetchPageData';
 import axios from 'axios';
 
-import { useMediaQuery } from 'react-responsive';
+import { useRouter } from 'next/router';
 
 function News({ articles }) {
-  const isTablet = useMediaQuery(
-    { maxDeviceWidth: 1024 },
-    { deviceWidth: 1024 },
-  );
-
   return (
     <main className={styles.News}>
       <Heading1>Новости</Heading1>
       <div className={styles.News_cards}>
-        {articles.map((article, index) => (
-          index % 5 === 0
-            ? (
-              <Link href={`/${article.slug}`} key={article.id}>
-                <a style={{ gridColumnStart: 1, gridColumnEnd: 3 }}>
-                  {!isTablet
-                    ? (
-                      <CardNewsBig
-                        media={article.media}
-                        category={article.category}
-                        title={article.title}
-                        date={article.date}
-                      />
-                    )
-                    : (
-                      <CardNewsSmall
-                        media={article.media}
-                        category={article.category}
-                        title={article.title}
-                        date={article.date}
-                      />
-                    )}
-                </a>
-              </Link>
-            )
-            : (
-              <Link href={`/${article.slug}`} key={article.id}>
-                <a>
-                  <CardNewsSmall
-                    media={article.media}
-                    category={article.category}
-                    title={article.title}
-                    date={article.date}
-                  />
-                </a>
-              </Link>
-            )
+        {articles.map((article) => (
+          <Link href={`${useRouter().pathname}/${article.slug}`} key={article.id}>
+            <a>
+              <CardNewsSmall
+                media={article.media}
+                category={article.category}
+                title={article.title}
+                date={article.date}
+              />
+            </a>
+          </Link>
         ))}
       </div>
     </main>

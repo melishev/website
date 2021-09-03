@@ -1,7 +1,7 @@
 {
   "name": "melnitsa",
   "private": true,
-  "version": "3.6.1",
+  "version": "3.6.8",
   "description": "Melnitsa CMS is a special version of strapi cms designed specifically for Melishev ™ customers. It differs from the original with a modified UI, a well-developed customization and additional exclusive features.",
   "scripts": {
     "dev": "strapi develop",
@@ -13,18 +13,18 @@
   "dependencies": {
     "knex": "0.21.18",
     "mysql": "2.18.1",
-    "strapi": "3.6.6",
-    "strapi-admin": "3.6.6",
-    "strapi-connector-bookshelf": "3.6.6",
-    "strapi-plugin-content-manager": "3.6.6",
-    "strapi-plugin-content-type-builder": "3.6.6",
-    "strapi-plugin-email": "3.6.6",
-    "strapi-plugin-i18n": "3.6.6",
+    "strapi": "3.6.8",
+    "strapi-admin": "3.6.8",
+    "strapi-connector-bookshelf": "3.6.8",
+    "strapi-plugin-content-manager": "3.6.8",
+    "strapi-plugin-content-type-builder": "3.6.8",
+    "strapi-plugin-email": "3.6.8",
+    "strapi-plugin-i18n": "3.6.8",
     "strapi-plugin-react-editorjs": "^1.3.6",
     "strapi-plugin-sitemap": "^1.2.5",
-    "strapi-plugin-upload": "3.6.6",
-    "strapi-plugin-users-permissions": "3.6.6",
-    "strapi-utils": "3.6.6"
+    "strapi-plugin-upload": "3.6.8",
+    "strapi-plugin-users-permissions": "3.6.8",
+    "strapi-utils": "3.6.8"
   },
   "author": {
     "name": "Matvey Melishev"

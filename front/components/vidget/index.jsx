@@ -5,8 +5,6 @@ import axios from 'axios';
 
 import { ReactSVG } from 'react-svg';
 
-import { Small, Text } from 'components/typography';
-
 const Vidget = () => {
   const [track, setTrack] = useState({});
 
@@ -23,8 +21,8 @@ const Vidget = () => {
     <div className={styles.Vidget}>
       <ReactSVG className={styles.Vidget_icon} src="/svg/boomBox.svg" />
       <div className={styles.Vidget_info}>
-        <Text>{track.trackname}</Text>
-        <Small>{track.artist}</Small>
+        <p>{track.trackname}</p>
+        <small>{track.artist}</small>
       </div>
     </div>
   );

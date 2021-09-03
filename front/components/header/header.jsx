@@ -4,8 +4,6 @@ import Link from 'next/link';
 
 import LogoSVG from 'public/svg/logo.svg';
 
-import { Small, Lead } from 'components/typography';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { openNavigation } from 'redux/state/modals';
 import { selectDataNavigation } from 'redux/state/global';
@@ -34,7 +32,7 @@ const Header = () => {
             <li key={item.slug}>
               <Link href={`/${item.slug}`}>
                 <a>
-                  <Lead>{item.name}</Lead>
+                  <span className="typography-lead">{item.name}</span>
                 </a>
               </Link>
             </li>
@@ -42,10 +40,10 @@ const Header = () => {
         </ul>
       </nav>
       <div className={styles.Header_controls}>
-        <Small>
+        <small>
           Москва&#160;
           {DateTime.now().setZone('Europe/Moscow').setLocale('ru').toLocaleString(DateTime.TIME_24_SIMPLE)}
-        </Small>
+        </small>
         <button type="button" aria-label="Menu" onClick={() => dispatch(openNavigation())}><ReactSVG src="/svg/burger.svg" /></button>
       </div>
     </header>

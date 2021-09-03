@@ -3,7 +3,6 @@ import styles from './modal.module.scss';
 import Link from 'next/link';
 
 import { ReactSVG } from 'react-svg';
-import { Lead } from 'components/typography';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { closeNavigation, selectModalNavigation } from 'redux/state/modals';
@@ -20,7 +19,7 @@ const Modal = () => {
       <nav>
         <ul>
           {dataNavigation.map((item) => (
-            <li key={item.slug}><Link href={`/${item.slug}`}><a><Lead>{item.name}</Lead></a></Link></li>
+            <li key={item.slug}><Link href={`/${item.slug}`}><a><span className="typography-lead">{item.name}</span></a></Link></li>
           ))}
         </ul>
       </nav>

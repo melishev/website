@@ -2,7 +2,6 @@ import styles from './styles.module.scss';
 import propTypes from 'prop-types';
 
 import { MaskImage } from 'components/utils';
-import { Small, Heading3, Text } from 'components/typography';
 
 import { DateTime } from 'luxon';
 
@@ -11,9 +10,9 @@ const CardNewsBig = ({ media, category, title, date }) => {
     <div className={styles.CardNewsBig}>
       <MaskImage className={styles.CardNewsBig_media} mask="2x1" src={media.url} alt={media.alternativeText} />
       <div className={styles.CardNewsBig_info}>
-        <Small>{category.name}</Small>
-        <Heading3>{title}</Heading3>
-        <Text>{DateTime.fromISO(date).setLocale('ru').toFormat('DD')}</Text>
+        <small>{category.name}</small>
+        <h3>{title}</h3>
+        <p>{DateTime.fromISO(date).setLocale('ru').toFormat('DD')}</p>
       </div>
     </div>
   );

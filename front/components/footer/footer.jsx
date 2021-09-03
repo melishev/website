@@ -2,17 +2,15 @@ import styles from './footer.module.scss';
 
 import Link from 'next/link';
 
-import { Small, Input } from 'components/typography';
-
 const Footer = () => {
   return (
     <footer className={styles.Footer}>
       <Link href="/">
         <a>
-          <Small>Melishev&#160;™</Small>
+          <small>Melishev&#160;™</small>
         </a>
       </Link>
-      <Input>All rights reserved</Input>
+      <span className="typography-input">All rights reserved</span>
     </footer>
   );
 };

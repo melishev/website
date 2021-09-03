@@ -5,7 +5,6 @@ import Layout from 'layouts/default';
 
 import Link from 'next/link';
 
-import { Heading1 } from 'components/typography';
 import { CardNewsSmall } from 'components';
 
 import { fetchPageData } from 'utils/fetchPageData';
@@ -16,7 +15,7 @@ import { useRouter } from 'next/router';
 function News({ articles }) {
   return (
     <main className={styles.News}>
-      <Heading1>Новости</Heading1>
+      <h1>Новости</h1>
       <div className={styles.News_cards}>
         {articles.map((article) => (
           <Link href={`${useRouter().pathname}/${article.slug}`} key={article.id}>

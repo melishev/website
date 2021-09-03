@@ -6,6 +6,3 @@ export { default as Vidget } from './vidget';
 // Card
 export { default as CardNewsBig } from './cards/news/big';
 export { default as CardNewsSmall } from './cards/news/small';
-
-// Delete later
-export { default as Plug } from './plug/plug';

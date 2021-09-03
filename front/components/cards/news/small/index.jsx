@@ -2,7 +2,6 @@ import styles from './styles.module.scss';
 import propTypes from 'prop-types';
 
 import { MaskImage } from 'components/utils';
-import { Small, Heading4, Text } from 'components/typography';
 
 import { DateTime } from 'luxon';
 
@@ -11,9 +10,9 @@ const CardNewsSmall = ({ media, category, title, date }) => {
     <div className={styles.CardNewsSmall}>
       <MaskImage mask="2x1" src={media.url} alt={media.alternativeText} />
       <div className={styles.CardNewsSmall_info}>
-        <Small>{category.name}</Small>
-        <Heading4>{title}</Heading4>
-        <Text>{DateTime.fromISO(date).setLocale('ru').toFormat('DD')}</Text>
+        <small>{category.name}</small>
+        <h4>{title}</h4>
+        <p>{DateTime.fromISO(date).setLocale('ru').toFormat('DD')}</p>
       </div>
     </div>
   );

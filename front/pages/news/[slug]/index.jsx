@@ -23,17 +23,10 @@ Article.getLayout = function getLayout(page) {
   );
 };
 
-// export async function getStaticPaths() {
-//   return {
-//     paths: [
-//       '/news/novyj-metod-lecheniya-poluchaet-podderzhku-apple',
-//     ],
-//     fallback: true,
-//   };
-// }
+export async function getServerSideProps(context) {
+  const { slug } = context.query;
 
-export async function getServerSideProps() {
-  const dataPage = await fetchArticleData('2');
+  const dataPage = await fetchArticleData(slug);
   const notFound = !dataPage;
 
   return {

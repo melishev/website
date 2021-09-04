@@ -18,6 +18,7 @@ html, body {
 
 #__next {
     display: grid;
+    grid-template-columns: 21.25vw 78.75vw;
     grid-template-areas:
         "header header"
         "banner banner"
@@ -40,7 +41,13 @@ aside {
 main {
     grid-area: main;
     width: 78.75vw;
+    min-height: calc(100vh - 100px);
     padding-right: 2.5vw;
+}
+
+article {
+    grid-area: main;
+    min-height: calc(100vh - 100px);
 }
 
 footer {

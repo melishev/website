@@ -1,24 +1,33 @@
 @import 'scss/imports';
 
 .Article {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  h1, h2, h3, h4, h5, h6, p {
-    width: 550px;
-    text-align: center;
+  width: 550px;
+  margin: 0 auto;
+  padding: 2.5vw 0;
+  &_date {
+    width: 100%;
+    font-weight: normal;
+    color: black;
   }
-  h1 {
+  &_title {
+    width: 100%;
     font-weight: bold;
+    color: black;
     margin: 1.25vw 0 2.5vw;
   }
-  h5 {
+  &_subtitle {
+    width: 100%;
     font-weight: 500;
+    color: black;
+    margin-bottom: 2.5vw;
   }
-  [data-media="true"] {
-    &[data-stretched="true"] {
-      width: 100vw;
+  &_media {
+    width: 100%;
+    margin-bottom: 2.5vw;
+    small {
+      font-weight: 300;
+      color: #000000B2;
+      margin-top: 0.3125vw;
     }
   }
 }

@@ -1,6 +1,12 @@
 /* eslint-disable react/no-danger */
 
-// Function select Heading level
+// Данный модуль предназначен для преобразования данных из Editor.js в HTML
+// Модуль не должен как либо стилизовать компоненты! Его основная задача -
+// преобразовать данные в SEO-FRENDLY HTML и вывести все возможные парам -
+// етры модулей через атрибуты, что бы дать возможность для дальнейшего
+// рендера.
+
+// Функция определяет уровень заголовка
 function RenderHeading(block) {
   switch (block.data.level) {
     case 1:
@@ -20,13 +26,18 @@ function RenderHeading(block) {
   }
 }
 
-// Main function
+// Главная функция
 function RenderText(block) {
   switch (block.type) {
     case 'header':
       return RenderHeading(block);
     case 'paragraph':
-      return <p key={block.id} dangerouslySetInnerHTML={{ __html: block.data.text }} />;
+      return (
+        <>
+          <p key={block.id} dangerouslySetInnerHTML={{ __html: block.data.text }} />
+          <br />
+        </>
+      );
     case 'image':
       return <p>IMAGE</p>;
     default:

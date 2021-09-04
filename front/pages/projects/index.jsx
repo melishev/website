@@ -1,13 +1,11 @@
 import styles from './projects.module.scss';
 
-import { Plug } from 'components';
-
 import { fetchPageData } from 'utils/fetchPageData';
 
 function Projects() {
   return (
     <main className={styles.Projects}>
-      <Plug />
+      <h1>Hi!</h1>
     </main>
   );
 }

@@ -1,13 +1,11 @@
 import styles from './contacts.module.scss';
 
-import { Plug } from 'components';
-
 import { fetchPageData } from 'utils/fetchPageData';
 
 function Contacts() {
   return (
     <main className={styles.Contacts}>
-      <Plug />
+      <h1>Hi!</h1>
     </main>
   );
 }

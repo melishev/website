@@ -1,13 +1,11 @@
 import styles from './products.module.scss';
 
-import { Plug } from 'components';
-
 import { fetchPageData } from 'utils/fetchPageData';
 
 function Products() {
   return (
     <main className={styles.Products}>
-      <Plug />
+      <h1>Hi!</h1>
     </main>
   );
 }

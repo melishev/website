@@ -50,7 +50,7 @@ export async function getStaticProps() {
   const dataPage = await fetchPageData('news');
   const notFound = !dataPage;
 
-  const dataArticle = await axios.get(`${process.env.api}/articles`);
+  const dataArticle = await axios.get(`${process.env.api}/articles?_sort=date:DESC`);
 
   return {
     props: {

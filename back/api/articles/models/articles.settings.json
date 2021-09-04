@@ -80,6 +80,15 @@
       },
       "component": "seo.meta",
       "required": true
+    },
+    "subTitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "required": true
     }
   }
 }

@@ -1,24 +1,22 @@
-import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Text } from 'components/typography';
-
-// import Image from 'components/media/article/image';
+/* eslint-disable react/no-danger */
 
 // Function select Heading level
 function RenderHeading(block) {
   switch (block.data.level) {
     case 1:
-      return <Heading1 key={block.id}>{block.data.text}</Heading1>;
+      return <h1 key={block.id} dangerouslySetInnerHTML={{ __html: block.data.text }} />;
     case 2:
-      return <Heading2 key={block.id}>{block.data.text}</Heading2>;
+      return <h2 key={block.id} dangerouslySetInnerHTML={{ __html: block.data.text }} />;
     case 3:
-      return <Heading3 key={block.id}>{block.data.text}</Heading3>;
+      return <h3 key={block.id} dangerouslySetInnerHTML={{ __html: block.data.text }} />;
     case 4:
-      return <Heading4 key={block.id}>{block.data.text}</Heading4>;
+      return <h4 key={block.id} dangerouslySetInnerHTML={{ __html: block.data.text }} />;
     case 5:
-      return <Heading5 key={block.id}>{block.data.text}</Heading5>;
+      return <h5 key={block.id} dangerouslySetInnerHTML={{ __html: block.data.text }} />;
     case 6:
-      return <Heading6 key={block.id}>{block.data.text}</Heading6>;
+      return <h6 key={block.id} dangerouslySetInnerHTML={{ __html: block.data.text }} />;
     default:
-      return <p key={block.id}>{block.data.text}</p>;
+      return <p key={block.id} dangerouslySetInnerHTML={{ __html: block.data.text }} />;
   }
 }
 
@@ -28,10 +26,9 @@ function RenderText(block) {
     case 'header':
       return RenderHeading(block);
     case 'paragraph':
-      return <Text key={block.id}>{block.data.text}</Text>;
+      return <p key={block.id} dangerouslySetInnerHTML={{ __html: block.data.text }} />;
     case 'image':
-      return <Text>Error</Text>;
-      // return <Image key={block.id} mask="2x1" src={block.data.file.url} alt={block.data.file.alternativeText} withBorder={block.data.withBorder} stretched={block.data.stretched} withBackground={block.data.withBackground} />;
+      return <p>IMAGE</p>;
     default:
       return <p key={block.id}>Error</p>;
   }

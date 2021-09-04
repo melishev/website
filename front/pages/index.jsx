@@ -7,8 +7,6 @@ import Link from 'next/link';
 
 import { ReactSVG } from 'react-svg';
 
-import { Lead, Text } from 'components/typography';
-
 import { MaskImage } from 'components/utils';
 
 import { fetchPageData } from 'utils/fetchPageData';
@@ -45,7 +43,7 @@ function Home({ banner }) {
                   src={item.media.url}
                 />
                 <div className={styles.Home_banner_slide_info}>
-                  <Lead>{item.title}</Lead>
+                  <span className="typography-lead">{item.title}</span>
                   <ReactSVG src="/svg/arrowRight.svg" className={styles.Home_banner_slide_info_icon} />
                 </div>
               </a>
@@ -54,7 +52,7 @@ function Home({ banner }) {
         ))}
       </Swiper>
       <main className={styles.Home}>
-        <Text>Привет</Text>
+        <p>Привет</p>
       </main>
     </>
   );

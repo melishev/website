@@ -1,4 +1,5 @@
-@import './imports.scss';
+@import './imports';
+@import './typography';
 @import 'public/font/Gilroy/stylesheet.css';
 
 * {
@@ -8,7 +9,7 @@
 }
 
 html, body {
-    font-size: $fs-1 + px;
+    font-size: 18px;
     font-family: 'Gilroy', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

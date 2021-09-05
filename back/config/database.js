@@ -11,6 +11,7 @@ module.exports = ({ env }) => ({
         username: env('DATABASE_USERNAME', 'talanov_mel_dev'),
         password: env('DATABASE_PASSWORD', 'on&EZzL6'),
         ssl: env.bool('DATABASE_SSL', false),
+        charset : 'utf8mb4',
       },
       options: {}
     },

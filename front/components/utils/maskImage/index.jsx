@@ -17,7 +17,6 @@ const MaskImage = ({ className, mask, src, alt }) => {
     if (mask === '3x1') {
       setSelectMask(<Mask3x1 />);
     }
-
     if (src) {
       setSelectSrc(process.env.api + src);
     }

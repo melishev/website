@@ -11,6 +11,9 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1.25vw;
         padding-bottom: 1.25vw;
+        *[data-size="large"] {
+            grid-column: 1 / 3;
+        }
     }
 }
 

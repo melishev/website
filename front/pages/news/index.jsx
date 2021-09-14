@@ -5,7 +5,7 @@ import Layout from 'layouts/default';
 
 import Link from 'next/link';
 
-import { CardNewsSmall } from 'components';
+import { CardNews } from 'components';
 
 import { fetchPageData } from 'utils/fetchPageData';
 import axios from 'axios';
@@ -17,17 +17,19 @@ function News({ articles }) {
     <main className={styles.News}>
       <h1>Новости</h1>
       <div className={styles.News_cards}>
-        {articles.map((article) => (
-          <Link href={`${useRouter().pathname}/${article.slug}`} key={article.id}>
-            <a>
-              <CardNewsSmall
+        {articles.map((article, i) => (
+          // <Link href={`${useRouter().pathname}/${article.slug}`} key={article.id}>
+          //   <a>
+              <CardNews
+                slug={article.slug}
+                size={i === 0 ? 'large' : 'medium'}
                 media={article.media}
                 category={article.category}
                 title={article.title}
                 date={article.date}
               />
-            </a>
-          </Link>
+          //   </a>
+          // </Link>
         ))}
       </div>
     </main>

@@ -70,7 +70,7 @@
       "type": "richtext",
       "required": true
     },
-    "meta": {
+    "seo": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {

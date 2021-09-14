@@ -24,10 +24,16 @@
   &_media {
     width: 100%;
     margin-bottom: 2.5vw;
-    small {
-      font-weight: 300;
-      color: #000000B2;
-      margin-top: 0.3125vw;
+    div {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    figcaption {
+      margin-top: 1%;
+      small {
+        font-weight: 300;
+        color: #000000B2;
+      }
     }
   }
 }

@@ -1,7 +1,12 @@
-/* eslint-disable react/no-danger, jsx-a11y/label-has-associated-control */
+/*
+  eslint-disable react/no-danger,
+  jsx-a11y/label-has-associated-control,
+  react/destructuring-assignment
+*/
 
 import { useState } from 'react';
 import { MaskImage } from 'components/utils';
+import Mask2x1 from 'assets/svg/mask2x1.svg';
 
 // Данный модуль предназначен для преобразования данных из Editor.js в HTML
 // Модуль не должен как либо стилизовать компоненты! Его основная задача -
@@ -70,13 +75,16 @@ function RenderDelimiter(block) {
 // Функиця рендера Open Graph
 function RenderLink(block) {
   return (
-    <div key={block.id}>
-      <a href={block.data.link}>
+    <a key={block.id} className="editor-link" href={block.data.link}>
+      <div className="editor-link-image">
+        <Mask2x1 style={{ backgroundImage: `url(${block.data.meta.image.url})` }} />
+      </div>
+      <div className="editor-link-text">
         <h6>{block.data.meta.title}</h6>
         <p>{block.data.meta.description}</p>
-        <img src={block.data.meta.image.url} alt={block.data.meta.description} />
-      </a>
-    </div>
+        <small>{block.data.link.match(/(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/g)[0]}</small>
+      </div>
+    </a>
   );
 }
 
@@ -84,7 +92,7 @@ function RenderLink(block) {
 function RenderCode(block) {
   return (
     <pre key={block.id} className="editor-code">
-      <code>{block.data.code}</code>
+      <p><code>{block.data.code}</code></p>
     </pre>
   );
 }
@@ -93,10 +101,10 @@ function RenderCode(block) {
 function RenderQuote(block) {
   return (
     <figure key={block.id} className="editor-quote" style={{ textAlign: block.data.alignment }}>
-      <blockquote>
-        <p dangerouslySetInnerHTML={{ __html: block.data.text }} />
-      </blockquote>
-      <city dangerouslySetInnerHTML={{ __html: block.data.caption }} />
+      <p>
+        <q dangerouslySetInnerHTML={{ __html: block.data.text }} />
+        <cite dangerouslySetInnerHTML={{ __html: block.data.caption }} />
+      </p>
     </figure>
   );
 }
@@ -113,7 +121,9 @@ function RenderTable(block) {
           <thead>
             <tr>
               {heading.map((item) => (
-                <td key={block.id + item} dangerouslySetInnerHTML={{ __html: item }} />
+                <td key={block.id + item}>
+                  <p dangerouslySetInnerHTML={{ __html: item }} />
+                </td>
               ))}
             </tr>
           </thead>
@@ -121,7 +131,9 @@ function RenderTable(block) {
             {data.map((row) => (
               <tr key={block.id + row}>
                 {row.map((item) => (
-                  <td key={block.id + item} dangerouslySetInnerHTML={{ __html: item }} />
+                  <td key={block.id + item}>
+                    <p dangerouslySetInnerHTML={{ __html: item }} />
+                  </td>
                 ))}
               </tr>
             ))}
@@ -135,7 +147,9 @@ function RenderTable(block) {
             {block.data.content.map((row) => (
               <tr key={block.id + row}>
                 {row.map((item) => (
-                  <td key={block.id + item} dangerouslySetInnerHTML={{ __html: item }} />
+                  <td key={block.id + item}>
+                    <p dangerouslySetInnerHTML={{ __html: item }} />
+                  </td>
                 ))}
               </tr>
             ))}

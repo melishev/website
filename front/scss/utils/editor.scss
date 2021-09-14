@@ -1,0 +1,168 @@
+.editor {
+  &-h1 {
+    padding: .5em 0;
+  }
+  &-h2 {
+    padding: .5em 0;
+  }
+  &-h3 {
+    padding: .5em 0;
+  }
+  &-h4 {
+    padding: .5em 0;
+  }
+  &-h5 {
+    padding: .5em 0;
+  }
+  &-h6 {
+    padding: .5em 0;
+  }
+  &-paragraph {
+    padding: .5em 0;
+  }
+  &-list {
+    padding: 0 0 0 10%;
+    li {
+      padding: .25em 0;
+      &::marker {
+        font-size: initial;
+      }
+    }
+  }
+  &-delimiter {
+    height: 1px;
+    margin: 10% 0;
+    border: unset;
+    background: black;
+  }
+  &-link {
+    display: flex;
+    margin: 4% 0;
+    border: 1px solid #bebebe;
+    border-radius: 8px;
+    overflow: hidden;
+    &-image {
+      width: 42%;
+      display: flex;
+      svg {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        path {
+          fill: none;
+        }
+      }
+    }
+    &-text {
+      width: 58%;
+      padding: 2% 4%;
+      * {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -moz-box;
+        -moz-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        line-clamp: 1;
+        box-orient: vertical;
+        color: black;
+      }
+      h6 {
+        font-weight: 500;
+        margin-bottom: 4%;
+      }
+      p {
+        font-weight: normal;
+        margin-bottom: 4%;
+      }
+      small {
+        font-weight: 300;
+      }
+    }
+  }
+  &-code {
+    background: #dedede;
+    border: 1px solid #bebebe;
+    border-radius: 8px;
+    color: #41314e;
+    padding: 2% 4%;
+    margin: 4% 0;
+  }
+  &-quote {
+    margin: 4%;
+    p {
+      display: flex;
+      flex-direction: column;
+      color: black;
+      q {
+        quotes: "\00ab" "\00bb";
+        font-weight: normal;
+      }
+      cite {
+        margin-top: 2%;
+        text-align: right;
+        font-weight: 500;
+      }
+    }
+  }
+  &-table {
+    width: 100%;
+    border: 1px solid #bebebe;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 4% 0;
+    color: black;
+    thead {
+      tr {
+        td {
+          font-weight: 500;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          font-weight: normal;
+        }
+      }
+    }
+    td {
+      padding: 1.5% 2%;
+      border: 1px solid #bebebe;
+    }
+  }
+  &-image {
+    div {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    figcaption {
+      margin-top: 1%;
+      small {
+        font-weight: 300;
+        color: #000000B2;
+      }
+    }
+  }
+  &-checklist {
+
+  }
+  &-raw {
+
+  }
+  &-warning {
+
+  }
+  &-error {
+    
+  }
+}
+
+// :global(.inline-code) {
+//   padding: 0 .3125vw;
+//   background: rgba(250, 239, 240, 0.78);
+//   color: red;
+// }

@@ -3,14 +3,10 @@ import propTypes from 'prop-types';
 
 import Layout from 'layouts/default';
 
-import Link from 'next/link';
-
 import { CardNews } from 'components';
 
 import { fetchPageData } from 'utils/fetchPageData';
 import axios from 'axios';
-
-import { useRouter } from 'next/router';
 
 function News({ articles }) {
   return (
@@ -18,18 +14,15 @@ function News({ articles }) {
       <h1>Новости</h1>
       <div className={styles.News_cards}>
         {articles.map((article, i) => (
-          // <Link href={`${useRouter().pathname}/${article.slug}`} key={article.id}>
-          //   <a>
-              <CardNews
-                slug={article.slug}
-                size={i === 0 ? 'large' : 'medium'}
-                media={article.media}
-                category={article.category}
-                title={article.title}
-                date={article.date}
-              />
-          //   </a>
-          // </Link>
+          <CardNews
+            slug={article.slug}
+            size={i === 0 ? 'large' : 'medium'}
+            media={article.media}
+            category={article.category}
+            title={article.title}
+            date={article.date}
+            key={article.id}
+          />
         ))}
       </div>
     </main>

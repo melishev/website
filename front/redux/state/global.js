@@ -2,22 +2,22 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   navigation: [
-    // {
-    //   name: 'Проекты',
-    //   slug: 'projects',
-    // },
+    {
+      name: 'Проекты',
+      slug: 'projects',
+    },
     {
       name: 'Новости',
       slug: 'news',
     },
-    // {
-    //   name: 'Продукты',
-    //   slug: 'products',
-    // },
-    // {
-    //   name: 'Контакты',
-    //   slug: 'contacts',
-    // },
+    {
+      name: 'Продукты',
+      slug: 'products',
+    },
+    {
+      name: 'Контакты',
+      slug: 'contacts',
+    },
   ],
 };
 

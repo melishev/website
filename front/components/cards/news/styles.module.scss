@@ -1,0 +1,98 @@
+@import 'scss/imports';
+
+.CardNews {
+  width: 100%;
+  display: flex;
+  background: white;
+  overflow: hidden;
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    small {
+      font-weight: 300;
+      color: black;
+    }
+    h3, h4 {
+      font-weight: 600;
+      color: black;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -moz-box;
+      -moz-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      box-orient: vertical;
+      margin: .625vw 0;
+    }
+    p {
+      font-weight: 300;
+      color: black;
+    }
+  }
+  &[data-size="large"] {
+    border-radius: 16px;
+    .media {
+      min-width: 46.5vw;
+    }
+    .info {
+      padding: 2.5vw;
+      h3 {
+        flex-grow: 2;
+        -webkit-line-clamp: 5;
+        line-clamp: 5;
+      }
+    }
+  }
+  &[data-size="medium"] {
+    flex-direction: column;
+    border-radius: 8px;
+    .info {
+      padding: .625vw 1.25vw;
+      h4 {
+        flex-grow: 1;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $lg + px) {
+  .CardNews {
+    &[data-size="large"] {
+      flex-direction: column;
+      .medium {
+        min-width: 100%;
+      }
+      .info {
+        padding: 1.25vw 2.5vw;
+        h3 {
+          -webkit-line-clamp: 3;
+          line-clamp: 3;
+          margin: 1.25vw 0;
+        }
+      }
+    }
+    &[data-size="medium"] {
+      .info {
+        padding: 1.25vw;
+        h4 {
+          margin: .625vw 0 1.25vw;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $sm + px) {
+  .CardNews {
+    &_info {
+      padding: 2.5vw;
+      h4 {
+        margin: 2.5vw 0;
+      }
+    }
+  }
+}

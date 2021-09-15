@@ -3,9 +3,9 @@
   "version": "3.0.0",
   "private": true,
   "scripts": {
-    "setup": "yarn && cd back && yarn && cd .. && cd front && yarn",
-    "dev:back": "yarn --cwd back dev",
-    "dev:front": "wait-on http://localhost:1337/admin && yarn --cwd front dev",
+    "setup": "yarn && cd api && yarn && cd .. && cd client && yarn",
+    "dev:back": "yarn --cwd api dev",
+    "dev:front": "wait-on http://localhost:1337/admin && yarn --cwd client dev",
     "dev": "cross-env FORCE_COLOR=1 npm-run-all -l -p dev:*"
   },
   "devDependencies": {

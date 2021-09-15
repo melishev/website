@@ -10,15 +10,15 @@ import RenderText from 'utils/renderEditorJS';
 import { DateTime } from 'luxon';
 import { MaskImage } from 'components/utils';
 
-function Article({ category, date, title, subTitle, media, article }) {
+function Article({ category, published_at, heading, description, image, article }) {
   return (
     <article className={styles.Article}>
-      <small className={styles.Article_date}>{`${category.name} | ${DateTime.fromISO(date).setLocale('ru').toFormat('DD')}`}</small>
-      <h1 className={styles.Article_title}>{title}</h1>
-      <h5 className={styles.Article_subtitle}>{subTitle}</h5>
+      <small className={styles.Article_date}>{`${category.name} | ${DateTime.fromISO(published_at).setLocale('ru').toFormat('DD')}`}</small>
+      <h1 className={styles.Article_title}>{heading}</h1>
+      <h5 className={styles.Article_subtitle}>{description}</h5>
       <figure className={styles.Article_media}>
-        <MaskImage mask="2x1" src={media.url} alt={media.alternativeText} />
-        <figcaption><small>{media.alternativeText}</small></figcaption>
+        <MaskImage mask="2x1" src={image.url} alt={image.alternativeText} />
+        <figcaption><small>{image.alternativeText}</small></figcaption>
       </figure>
       {JSON.parse(article).blocks.map((block) => (
         RenderText(block)
@@ -31,10 +31,10 @@ Article.propTypes = {
   category: propTypes.shape({
     name: propTypes.string,
   }).isRequired,
-  date: propTypes.string.isRequired,
-  title: propTypes.string.isRequired,
-  subTitle: propTypes.string.isRequired,
-  media: propTypes.shape({
+  published_at: propTypes.string.isRequired,
+  heading: propTypes.string.isRequired,
+  description: propTypes.string.isRequired,
+  image: propTypes.shape({
     alternativeText: propTypes.string,
     url: propTypes.string,
   }).isRequired,

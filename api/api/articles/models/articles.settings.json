@@ -16,79 +16,39 @@
     }
   },
   "attributes": {
-    "title": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+    "heading": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true,
+      "minLength": 30
     },
     "slug": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
       "type": "uid",
-      "targetField": "title"
-    },
-    "date": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "datetime",
+      "targetField": "heading",
       "required": true
     },
     "category": {
-      "model": "article-category"
+      "model": "article-category",
+      "via": "articles"
     },
-    "media": {
+    "image": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
-        "images",
-        "videos"
+        "images"
       ],
       "plugin": "upload",
       "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
+      "pluginOptions": {}
     },
     "article": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
       "type": "richtext",
       "required": true
     },
-    "seo": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "seo.meta",
-      "required": true
-    },
-    "subTitle": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+    "description": {
       "type": "text",
-      "required": true
+      "required": true,
+      "minLength": 20
     }
   }
 }

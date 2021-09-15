@@ -1,68 +1,39 @@
 import styles from './styles.module.scss';
 import propTypes from 'prop-types';
 
-import Layout from 'layouts/default';
+import Layout from 'layouts/page';
 
-import Link from 'next/link';
-
-import { ReactSVG } from 'react-svg';
-
-import { MaskImage } from 'components/utils';
+import { CardNews } from 'components';
 
 import { fetchPageData } from 'utils/fetchPageData';
+import axios from 'axios';
 
-// Import Swiper React components
-import SwiperCore, { Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-// install Swiper modules
-SwiperCore.use([Autoplay]);
-
-function Home({ banner }) {
-  const sliderSettings = {
-    spaceBetween: 0,
-    slidesPerView: 1,
-    loop: true,
-    allowTouchMove: false,
-    autoplay: {
-      delay: 6000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    },
-    speed: 1200,
-  };
-
+function News({ articles }) {
   return (
-    <>
-      <Swiper {...sliderSettings} className={styles.Home_banner}>
-        {banner.map((item) => (
-          <SwiperSlide className={styles.Home_banner_slide} key={item.id}>
-            <Link href={item.link}>
-              <a>
-                <MaskImage
-                  mask="3x1"
-                  src={item.media.url}
-                />
-                <div className={styles.Home_banner_slide_info}>
-                  <span className="typography-lead">{item.title}</span>
-                  <ReactSVG src="/svg/arrowRight.svg" className={styles.Home_banner_slide_info_icon} />
-                </div>
-              </a>
-            </Link>
-          </SwiperSlide>
+    <main className={styles.News}>
+      <h1>Новости</h1>
+      <div className={styles.News_cards}>
+        {articles.map((article, i) => (
+          <CardNews
+            slug={article.slug}
+            size={i === 0 ? 'large' : 'medium'}
+            media={article.media}
+            category={article.category}
+            title={article.title}
+            date={article.date}
+            key={article.id}
+          />
         ))}
-      </Swiper>
-      <main className={styles.Home}>
-        <p>Привет</p>
-      </main>
-    </>
+      </div>
+    </main>
   );
 }
 
-Home.propTypes = {
-  banner: propTypes.arrayOf(propTypes.object).isRequired,
+News.propTypes = {
+  articles: propTypes.arrayOf(propTypes.object).isRequired,
 };
 
-Home.getLayout = function getLayout(page) {
+News.getLayout = function getLayout(page) {
   return (
     <Layout>
       {page}
@@ -71,16 +42,18 @@ Home.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps() {
-  const dataPage = await fetchPageData('main');
-
+  const dataPage = await fetchPageData('news');
   const notFound = !dataPage;
+
+  const dataArticle = await axios.get(`${process.env.api}/articles?_sort=date:DESC`);
 
   return {
     props: {
       ...dataPage,
+      articles: [...dataArticle.data],
     },
     notFound,
   };
 }
 
-export default Home;
+export default News;

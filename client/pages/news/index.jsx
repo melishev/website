@@ -1,7 +1,7 @@
 import styles from './news.module.scss';
 import propTypes from 'prop-types';
 
-import Layout from 'layouts/default';
+import Layout from 'layouts/page';
 
 import { CardNews } from 'components';
 

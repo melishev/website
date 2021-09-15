@@ -15,13 +15,6 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.meta"
-    },
-    "banner": {
-      "type": "component",
-      "repeatable": true,
-      "component": "card.banner",
-      "required": true,
-      "min": 1
     }
   }
 }

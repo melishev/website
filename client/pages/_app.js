@@ -5,9 +5,9 @@ import 'scss/global.scss';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 
-// Import Seo
-import { DefaultSeo } from 'next-seo';
-import Seo from '../next-seo.config';
+// // Import Seo
+// import { DefaultSeo } from 'next-seo';
+// import Seo from '../next-seo.config';
 
 // Import Redux
 import { Provider } from 'react-redux';
@@ -18,12 +18,12 @@ function Application({ Component, pageProps }) {
 
   return (
     <Provider store={store}>
-      <DefaultSeo
+      {/* <DefaultSeo
         title={pageProps.statusCode ? pageProps.statusCode : pageProps.meta.title}
         description={pageProps.statusCode ? pageProps.statusCode : pageProps.meta.description}
         canonical={pageProps.statusCode ? '' : `https://${process.env.domain}/${pageProps.meta.canonical}`}
         {...Seo}
-      />
+      /> */}
       {getLayout(<Component {...pageProps} />)}
     </Provider>
   );

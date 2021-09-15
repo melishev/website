@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_seo_metas",
+  "collectionName": "components_seo_meta_for_page",
   "info": {
-    "name": "meta",
-    "icon": "ad",
+    "name": "Meta for page",
+    "icon": "tachometer-alt",
     "description": ""
   },
   "options": {},

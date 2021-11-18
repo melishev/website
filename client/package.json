@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "luxon": "^2.0.2",
     "next": "11.1.0",
     "next-seo": "^4.26.0",

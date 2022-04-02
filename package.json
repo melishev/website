@@ -1,16 +1,22 @@
 {
   "name": "melishev",
-  "version": "3.0.0",
   "private": true,
+  "version": "0.0.0",
   "scripts": {
-    "setup": "yarn && cd back && yarn && cd .. && cd front && yarn",
-    "dev:back": "yarn --cwd back dev",
-    "dev:front": "wait-on http://localhost:1337/admin && yarn --cwd front dev",
-    "dev": "cross-env FORCE_COLOR=1 npm-run-all -l -p dev:*"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@wuki-ui/vue": "^3.0.0-alpha.8",
+    "sass": "^1.49.11",
+    "vue": "^3.2.25"
   },
   "devDependencies": {
-    "cross-env": "7.0.3",
-    "npm-run-all": "4.1.5",
-    "wait-on": "5.2.1"
+    "@vitejs/plugin-vue": "^2.3.0",
+    "@vue/eslint-config-airbnb": "^6.0.0",
+    "eslint": "^8.12.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "vite": "^2.9.0"
   }
 }

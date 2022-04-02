@@ -4,4 +4,10 @@ body {
 }
 a {
     text-decoration: none;
+    &[href="#"] {
+        cursor: no-drop;
+    }
+}
+ul {
+    list-style: none;
 }

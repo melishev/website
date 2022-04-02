@@ -1,12 +1,6 @@
 <template>
     <Grid tag="header" :col="24">
         <Text tag="h5" class="ewf">melishev</Text>
-        <nav>
-          <Text tag="a" href="#" variant="body2">projects</Text>
-          <Text tag="a" href="#" variant="body2">blog</Text>
-          <Text tag="a" href="#" variant="body2">lab / experiments</Text>
-          <Text tag="a" href="#" variant="body2">contacts</Text>
-        </nav>
     </Grid>
 </template>
 

@@ -1,30 +1,7 @@
-# Этапы разработки
+# Vue 3 + Vite
 
-- [ ] 1. Разработать страницу новости категори "Разработка".
-  - [x] 1.1 Подготовить CMS для вывода данных для статей.
-  - [ ] 1.2 Доработать модуль рендера статьи из Editor.js.
-  - [x] 1.2 Перенести компоненты типографики в SCSS.
-- [ ] 2. Разработать Бэкенд для виджета МУЗЫКА.
-- [ ] 3. Добавить стартовые статьи.
-- [ ] 4. Вывести все важные данные в .env файл.
-- [ ] 5. Добавить Google Analytics v4.
-- [ ] 6. Вывести статьи на главную страницу, что бы она не выглядеела такой пустой.
-- [ ] 7. Нарисовать страницу контактов.
-- [ ] 8. Реализовать страницу контактов.
-- [ ] 9. Нарисовать страницу проекта.
-- [ ] 10. Реализовать страницу проекта.
+This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-# Задачи на будущее:
-- [x] 1. Добавить Sharp
+## Recommended IDE Setup
 
-- [x] 2. Придумать способ добавлять стили и font-weight и color для компонентов типографики 
-
-- [ ] 3. Добавить Sitemap
-
-- [ ] 4. Добавить Robots.txt
-
-- [ ] 5. Разработать универсальное модальное окно
-
-- [ ] 6. Разработать универсальные компоненты IMG и VIDEO
-
-- [ ] 7. Внедрить FingerPrint.js
+- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)

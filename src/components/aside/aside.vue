@@ -53,13 +53,13 @@ onMounted(async () => {
     <p class="aside-bio">
       {{ ShortBIO }}
       <br /><br />
-      I am engaged in Front-end development for the past 5 years. From 2017 to 2019 I studied html, css, js; along the way providing various services from revision, to full freelance project execution. In 2019 switched to Vue.js and Nuxt.js development. In 2021, additionally studied React.js and its Next framework.
+      I am engaged in Front-end development for 5 years. From 2017 to 2019 studied html, css, js; also providing various services from revision, to full freelance project execution. In 2019, switched to Vue.js and Nuxt.js development. In 2021, additionally studied React.js and its Next framework.
       <br /><br />
-      Since 2017 I managed to work with many individuals, small businesses and companies, to which I provided various services in the field of web development, both as a developer and consultant.
+      Since 2017 I managed to work with many individuals, small businesses and companies, to whom I provided various services in the field of web development, both as a developer and a consultant.
       <br /><br />
-      From 2020 I contributed to Open Source development. Created plugin for Strapi CMS. Created a theme for the VS code editor. And never finished my agnostic component library.
+      Since 2020 contributed to Open Source development. Created my own plugin for Strapi CMS and my own theme for the VS code editor. And I'm still working on my component agnostic library.
       <br /><br />
-      At the moment, in my free time from work and personal affairs I'm additionally studying Node.js and its popular Nest framework.
+      At the moment, in my spare time from work and personal affairs, I'm additionally studying Node.js and its popular Nest framework.
     </p>
     <div class="aside-blocks">
       <AsideBlock

@@ -33,7 +33,6 @@ defineProps<BlockProps>()
     align-items: center;
     gap: 10px;
     &-icon {
-      min-width: min-content;
       fill: var(--bs-body-color);
     }
     &-value {

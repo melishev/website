@@ -1,0 +1,17 @@
+@mixin header-6 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+@mixin body {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+@mixin small {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}

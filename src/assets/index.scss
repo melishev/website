@@ -1,9 +1,4 @@
-$body-bg: #1B1B1B;
-$body-color: #FFFFFF;
-
-$enable-cssgrid: true;
-
-@import "~bootstrap/scss/bootstrap";
+@import './bootstrap.scss';
 
 body {
   font-family: Manrope, var(--bs-font-sans-serif);

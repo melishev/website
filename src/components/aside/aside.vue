@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import { markRaw, onMounted, reactive, ref } from 'vue';
-import { AsideBlock } from './ui';
+import {
+  markRaw, onMounted, reactive, ref,
+} from 'vue';
 import { Icon } from '@/components';
 import { githubApi } from '@/shared/api';
+import { AsideBlock } from './ui';
 
 const GHUsername = 'melishev';
 const FIO = ref('');
@@ -28,11 +30,11 @@ const blocks = reactive({
     title: 'Email',
     icon: markRaw(Icon.Email),
     value: '',
-  }
-})
+  },
+});
 
 onMounted(async () => {
-  const GHPersonalData = await githubApi.getUserInfo(GHUsername)
+  const GHPersonalData = await githubApi.getUserInfo(GHUsername);
 
   FIO.value = GHPersonalData.name;
   ShortBIO.value = GHPersonalData.bio;
@@ -40,11 +42,11 @@ onMounted(async () => {
     timeZone: GHPersonalData.location,
     hour: '2-digit',
     minute: '2-digit',
-  })
+  });
   blocks.location.value = GHPersonalData.location;
   blocks.status.value = GHPersonalData.hireable ? 'Available' : 'Busy';
   blocks.email.value = GHPersonalData.email || '';
-})
+});
 </script>
 
 <template>

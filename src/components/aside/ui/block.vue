@@ -4,7 +4,7 @@ interface BlockProps {
   icon?: any
   value: string | number | Date
 }
-defineProps<BlockProps>()
+defineProps<BlockProps>();
 </script>
 
 <template>

@@ -4,4 +4,4 @@ export type GHPersonalData = {
   location: string
   hireable: boolean
   email: string | null
-}
+};

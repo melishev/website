@@ -10,6 +10,8 @@ module.exports = {
     '@vue/eslint-config-typescript',
   ],
   parserOptions: {
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module',
     ecmaVersion: 'latest',
   },
   rules: {

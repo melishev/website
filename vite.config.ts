@@ -15,6 +15,9 @@ export default defineConfig({
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
     },
   },
+  server: {
+    port: 3000,
+  },
   css: {
     preprocessorOptions: {
       scss: {

@@ -4,37 +4,53 @@ import {
 } from 'vue';
 import { Icon } from '@/components';
 import { githubApi } from '@/shared/api';
-import { AsideBlock } from './ui';
+import { AsideBlock, type AsideBlockProps } from './ui';
 
-const GHUsername = 'melishev';
+const ghUsername = 'melishev';
+const tgUsername = 'melishev';
+
 const FIO = ref('');
 const ShortBIO = ref('');
 
-const blocks = reactive({
+type Block = {
+  [x: string]: AsideBlockProps
+};
+
+const blocks = reactive<Block>({
   time: {
     title: 'Time',
     icon: markRaw(Icon.Time),
     value: '',
+    href: null,
   },
   location: {
     title: 'Location',
     icon: markRaw(Icon.Location),
     value: '',
+    href: null,
   },
   status: {
     title: 'Status',
     icon: markRaw(Icon.Available),
     value: '',
+    href: null,
   },
   email: {
     title: 'Email',
-    icon: markRaw(Icon.Email),
+    icon: null,
     value: '',
+    href: null,
+  },
+  telegram: {
+    title: 'Telegram',
+    icon: null,
+    value: '',
+    href: null,
   },
 });
 
 onMounted(async () => {
-  const GHPersonalData = await githubApi.getUserInfo(GHUsername);
+  const GHPersonalData = await githubApi.getUserInfo(ghUsername);
 
   FIO.value = GHPersonalData.name;
   ShortBIO.value = GHPersonalData.bio;
@@ -45,7 +61,12 @@ onMounted(async () => {
   });
   blocks.location.value = GHPersonalData.location;
   blocks.status.value = GHPersonalData.hireable ? 'Available' : 'Busy';
+
   blocks.email.value = GHPersonalData.email || '';
+  blocks.email.href = `mailto:${GHPersonalData.email}`;
+
+  blocks.telegram.value = `@${tgUsername}`;
+  blocks.telegram.href = `tg://resolve?domain=${tgUsername}`;
 });
 </script>
 
@@ -55,11 +76,11 @@ onMounted(async () => {
     <p class="aside-bio">
       {{ ShortBIO }}
       <br /><br />
-      I am engaged in Front-end development for 5 years. From 2017 to 2019 studied html, css, js; also providing various services from revision, to full freelance project execution. In 2019, switched to Vue.js and Nuxt.js development. In 2021, additionally studied React.js and its Next framework.
+      I am engaged in <mark>Front-end</mark> development for <mark>5 years</mark>. From 2017 to 2019 studied html, css, js; also providing various services from revision, to full freelance project execution. In 2019, switched to <mark>Vue.js and Nuxt.js</mark> development. In 2021, additionally studied React.js and its Next framework.
       <br /><br />
-      Since 2017 I managed to work with many individuals, small businesses and companies, to whom I provided various services in the field of web development, both as a developer and a consultant.
+      Since 2017 I managed to work with many individuals, small businesses and companies, to whom I provided various services in the field of <mark>web development</mark>, both as a developer and a consultant.
       <br /><br />
-      Since 2020 contributed to Open Source development. Created my own plugin for Strapi CMS and my own theme for the VS code editor. And I'm still working on my component agnostic library.
+      Since 2020 contributed to <mark>Open Source development</mark>. Created my own plugin for Strapi CMS and my own theme for the VS code editor. And I'm still working on my component agnostic library.
       <br /><br />
       At the moment, in my spare time from work and personal affairs, I'm additionally studying Node.js and its popular Nest framework.
     </p>
@@ -70,6 +91,7 @@ onMounted(async () => {
         :title="block.title"
         :icon="block.icon"
         :value="block.value"
+        :href="block.href"
       />
     </div>
   </aside>
@@ -84,6 +106,7 @@ onMounted(async () => {
   }
   &-bio {
     @include body;
+    line-height: 24px;
     color: #A7A7A7;
   }
   &-blocks {

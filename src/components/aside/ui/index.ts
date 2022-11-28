@@ -1,2 +1,2 @@
-/* eslint-disable import/prefer-default-export */
+export type { BlockProps as AsideBlockProps } from './block.vue';
 export { default as AsideBlock } from './block.vue';

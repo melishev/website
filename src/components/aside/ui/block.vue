@@ -1,14 +1,20 @@
 <script setup lang="ts">
-interface BlockProps {
+export interface BlockProps {
   title: string
-  icon?: any
+  icon: any
   value: string | number | Date
+  href: string | null
 }
 defineProps<BlockProps>();
 </script>
 
 <template>
-  <div v-if="!!value" class="asideBlock py-2 px-3 rounded-3">
+  <component
+    v-if="!!value"
+    :is="href ? 'a' : 'div'"
+    :href="href"
+    class="asideBlock py-2 px-3 rounded-3"
+  >
     <p class="asideBlock-title mb-1">
       {{ title }}
     </p>
@@ -16,14 +22,14 @@ defineProps<BlockProps>();
       <component :is="icon" class="asideBlock-content-icon" />
       <p class="asideBlock-content-value mb-0">{{ value }}</p>
     </div>
-  </div>
+  </component>
 </template>
 
 <style scoped lang="scss">
 .asideBlock {
   background: rgba(55, 55, 55, 0.5);
-  // background: var(--bs-gray-300);
   backdrop-filter: blur(2px);
+  text-decoration: none;
   &-title {
     @include small;
     color: #A7A7A7;
@@ -37,6 +43,7 @@ defineProps<BlockProps>();
     }
     &-value {
       @include body;
+      color: white;
     }
   }
 }

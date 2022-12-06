@@ -10,23 +10,26 @@ defineProps<BlockProps>();
 
 <template>
   <component
-    v-if="!!value"
     :is="href ? 'a' : 'div'"
     :href="href"
-    class="asideBlock py-2 px-3 rounded-3"
+    class="asideBlock py-2 px-3 rounded-3 placeholder-glow"
   >
     <p class="asideBlock-title mb-1">
       {{ title }}
     </p>
     <div class="asideBlock-content">
       <component :is="icon" class="asideBlock-content-icon" />
-      <p class="asideBlock-content-value mb-0">{{ value }}</p>
+      <p class="asideBlock-content-value mb-0 w-100">
+        {{ value }}
+        <span v-if="!value" class="placeholder w-100" />
+      </p>
     </div>
   </component>
 </template>
 
 <style scoped lang="scss">
 .asideBlock {
+  min-width: 100px;
   background: rgba(55, 55, 55, 0.5);
   backdrop-filter: blur(2px);
   text-decoration: none;
@@ -39,6 +42,7 @@ defineProps<BlockProps>();
     align-items: center;
     gap: 10px;
     &-icon {
+      min-width: fit-content;
       fill: var(--bs-body-color);
     }
     &-value {

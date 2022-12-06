@@ -10,7 +10,6 @@ const ghUsername = 'melishev';
 const tgUsername = 'melishev';
 
 const FIO = ref('');
-const ShortBIO = ref('');
 
 type Block = {
   [x: string]: AsideBlockProps
@@ -35,12 +34,12 @@ const blocks = reactive<Block>({
     value: '',
     href: null,
   },
-  email: {
-    title: 'Email',
-    icon: null,
-    value: '',
-    href: null,
-  },
+  // email: {
+  //   title: 'Email',
+  //   icon: null,
+  //   value: '',
+  //   href: null,
+  // },
   telegram: {
     title: 'Telegram',
     icon: null,
@@ -53,7 +52,6 @@ onMounted(async () => {
   const GHPersonalData = await githubApi.getUserInfo(ghUsername);
 
   FIO.value = GHPersonalData.name;
-  ShortBIO.value = GHPersonalData.bio;
   blocks.time.value = new Date().toLocaleTimeString('en-US', {
     timeZone: GHPersonalData.location,
     hour: '2-digit',
@@ -62,8 +60,8 @@ onMounted(async () => {
   blocks.location.value = GHPersonalData.location;
   blocks.status.value = GHPersonalData.hireable ? 'Available' : 'Busy';
 
-  blocks.email.value = GHPersonalData.email || '';
-  blocks.email.href = `mailto:${GHPersonalData.email}`;
+  // blocks.email.value = GHPersonalData.email || '';
+  // blocks.email.href = `mailto:${GHPersonalData.email}`;
 
   blocks.telegram.value = `@${tgUsername}`;
   blocks.telegram.href = `tg://resolve?domain=${tgUsername}`;
@@ -72,10 +70,11 @@ onMounted(async () => {
 
 <template>
   <aside class="aside h-100">
-    <h1 class="aside-fio mb-3">{{ FIO }}</h1>
+    <h1 class="aside-fio mb-3 placeholder-glow col-6">
+      {{ FIO }}
+      <span v-if="!FIO.length" class="placeholder col-12" />
+    </h1>
     <p class="aside-bio">
-      {{ ShortBIO }}
-      <br /><br />
       I am engaged in <mark>Front-end</mark> development for <mark>5 years</mark>. From 2017 to 2019 studied html, css, js; also providing various services from revision, to full freelance project execution. In 2019, switched to <mark>Vue.js and Nuxt.js</mark> development. In 2021, additionally studied React.js and its Next framework.
       <br /><br />
       Since 2017 I managed to work with many individuals, small businesses and companies, to whom I provided various services in the field of <mark>web development</mark>, both as a developer and a consultant.

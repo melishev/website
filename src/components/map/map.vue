@@ -91,7 +91,12 @@ onUnmounted(() => {
   }
 }
 
-.mapboxgl-ctrl-bottom-left {
-  display: none !important;
+.mapboxgl {
+  &-canvas {
+    border-radius: 20px;
+  }
+  &-ctrl-bottom-left {
+    display: none !important;
+  }
 }
 </style>

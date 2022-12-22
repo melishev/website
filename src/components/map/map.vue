@@ -12,11 +12,11 @@ const mapboxJSLoaded = ref(false);
 
 const link = document.createElement('link');
 link.setAttribute('rel', 'stylesheet');
-link.setAttribute('href', 'https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css');
+link.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/2.11.1/mapbox-gl.css');
 document.head.appendChild(link);
 
 const script = document.createElement('script');
-script.setAttribute('src', 'https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js');
+script.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/2.11.1/mapbox-gl.js');
 document.head.appendChild(script);
 
 script.onload = () => {

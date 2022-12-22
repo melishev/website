@@ -2,7 +2,7 @@
 import {
   markRaw, onMounted, reactive, ref,
 } from 'vue';
-import { Icon } from '@/components';
+import { Icon } from '@/shared/ui';
 import { githubApi } from '@/shared/api';
 import { AsideBlock, type AsideBlockProps } from './ui';
 

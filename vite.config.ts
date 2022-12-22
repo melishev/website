@@ -22,7 +22,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
-          @import "@/assets/fontStyles";
+          @import "@/app/assets/fontStyles";
         `,
       },
     },

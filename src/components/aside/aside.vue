@@ -3,7 +3,7 @@ import {
   markRaw, reactive, ref, watch,
 } from 'vue';
 import { Icon } from '@/shared/ui';
-import { TELEGRAM_USERNAME } from '@/shared/config';
+import { GITHUB_USERNAME, TELEGRAM_USERNAME } from '@/shared/config';
 import { useGlobalStore } from '@/shared/lib';
 import { mapboxApi } from '@/shared/api';
 import { AsideBlock, type AsideBlockProps } from './ui';
@@ -35,6 +35,12 @@ const blocks = reactive<Block>({
   //   value: '',
   //   href: null,
   // },
+  github: {
+    title: 'Github',
+    icon: null,
+    value: GITHUB_USERNAME,
+    href: `https://github.com/${GITHUB_USERNAME}`,
+  },
   telegram: {
     title: 'Telegram',
     icon: null,

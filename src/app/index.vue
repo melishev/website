@@ -4,8 +4,11 @@ import { githubApi, mapboxApi } from '@/shared/api';
 import { GITHUB_USERNAME } from '@/shared/config';
 import { useGlobalStore } from '@/shared/lib';
 import { watch } from 'vue';
+import { useWindowSize } from '@vueuse/core';
 
 const globalStore = useGlobalStore();
+
+const { width } = useWindowSize();
 
 githubApi.getUserInfo(GITHUB_USERNAME)
   .then((res) => {
@@ -27,7 +30,11 @@ watch(() => globalStore.github.user?.location, (newLocation) => {
       <div class="col-sm-6 col-xl-4 col-xxl-3">
         <Aside />
       </div>
-      <div class="col grid d-none d-xl-grid" style="--bs-rows: 4">
+      <div
+        v-if="width > 1140"
+        class="col grid d-none d-xl-grid"
+        style="--bs-rows: 4"
+      >
         <!-- <div class="g-col-3">
           <p>Oops... Content is not invented</p>
         </div>

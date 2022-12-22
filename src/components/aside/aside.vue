@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import {
-  markRaw, onMounted, reactive, ref,
+  markRaw, reactive, ref, watch,
 } from 'vue';
 import { Icon } from '@/shared/ui';
-import { githubApi } from '@/shared/api';
+import { TELEGRAM_USERNAME } from '@/shared/config';
+import { useGlobalStore } from '@/shared/lib';
+import { mapboxApi } from '@/shared/api';
 import { AsideBlock, type AsideBlockProps } from './ui';
 
-const ghUsername = 'melishev';
-const tgUsername = 'melishev';
+const globalStore = useGlobalStore();
 
 const FIO = ref('');
 
@@ -19,12 +20,6 @@ const blocks = reactive<Block>({
   time: {
     title: 'Time',
     icon: markRaw(Icon.Time),
-    value: '',
-    href: null,
-  },
-  location: {
-    title: 'Location',
-    icon: markRaw(Icon.Location),
     value: '',
     href: null,
   },
@@ -43,28 +38,39 @@ const blocks = reactive<Block>({
   telegram: {
     title: 'Telegram',
     icon: null,
-    value: '',
-    href: null,
+    value: `@${TELEGRAM_USERNAME}`,
+    href: `tg://resolve?domain=${TELEGRAM_USERNAME}`,
   },
 });
 
-onMounted(async () => {
-  const GHPersonalData = await githubApi.getUserInfo(ghUsername);
+watch(() => globalStore.github.user, (user) => {
+  if (user) {
+    FIO.value = user.name;
+    blocks.status.value = user.hireable ? 'Available' : 'Busy';
 
-  FIO.value = GHPersonalData.name;
-  blocks.time.value = new Date().toLocaleTimeString('en-US', {
-    timeZone: GHPersonalData.location,
-    hour: '2-digit',
-    minute: '2-digit',
-  });
-  blocks.location.value = GHPersonalData.location;
-  blocks.status.value = GHPersonalData.hireable ? 'Available' : 'Busy';
+    // blocks.email.value = GHPersonalData.email || '';
+    // blocks.email.href = `mailto:${GHPersonalData.email}`;
+  }
+});
 
-  // blocks.email.value = GHPersonalData.email || '';
-  // blocks.email.href = `mailto:${GHPersonalData.email}`;
+watch(() => globalStore.mapboxTimezone, (timeZone) => {
+  if (timeZone) {
+    blocks.time.value = new Date().toLocaleTimeString('en-US', {
+      timeZone,
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  }
+});
 
-  blocks.telegram.value = `@${tgUsername}`;
-  blocks.telegram.href = `tg://resolve?domain=${tgUsername}`;
+watch(() => globalStore.mapboxLocation, (location) => {
+  if (location) {
+    mapboxApi.getTilequery(...location)
+      .then((res) => res.json())
+      .then((res) => {
+        globalStore.setMapboxTile(res);
+      });
+  }
 });
 </script>
 
